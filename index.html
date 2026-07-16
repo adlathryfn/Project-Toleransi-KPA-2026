@@ -1,24 +1,22 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KPA 2026 | Hizeb Usman - Project Toleransi</title>
-    
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KPA 2026 | Hizeb Usman – Project Toleransi</title>
+
     <!-- Font Awesome 6 -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <!-- AOS Animation -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
 
     <style>
         /* ==================== CSS RESET & VARIABLES ==================== */
         :root {
             --hijau-tua: #0B4F3A;
-            --hijau-muda: #0d6b4e;
             --emas: #C9A84C;
-            --emas-muda: #d4b65e;
             --putih: #FFFFFF;
             --abu-muda: #F9F9F9;
             --abu-sedang: #E8E8E8;
@@ -27,11 +25,15 @@
             --transisi: all 0.3s ease;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-        html { 
-            scroll-behavior: smooth; 
-            scroll-padding-top: 80px; 
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
             overflow-x: hidden;
             width: 100%;
         }
@@ -39,457 +41,1538 @@
         body {
             font-family: 'Inter', 'Segoe UI', sans-serif;
             color: var(--teks-gelap);
-            background-color: var(--putih);
+            background: var(--putih);
             line-height: 1.7;
             overflow-x: hidden;
             width: 100%;
             max-width: 100vw;
         }
 
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
 
         /* ==================== NAVBAR ==================== */
         .navbar {
-            position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
-            padding: 20px 0; transition: var(--transisi); background: transparent;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 20px 0;
+            transition: var(--transisi);
+            background: transparent;
         }
         .navbar.scrolled {
-            background: rgba(11, 79, 58, 0.95); backdrop-filter: blur(10px);
-            padding: 12px 0; box-shadow: 0 4px 30px rgba(0,0,0,0.15);
+            background: rgba(11, 79, 58, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 12px 0;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
         }
-        .navbar .container { display: flex; justify-content: space-between; align-items: center; }
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
         .nav-logo {
-            font-size: 1.4rem; font-weight: 800; color: var(--putih);
-            text-decoration: none; display: flex; align-items: center; gap: 8px;
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--putih);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
         .nav-logo .logo-icon {
-            width: 36px; height: 36px; background: var(--emas); border-radius: 8px;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 1.1rem; color: var(--hijau-tua); font-weight: 900;
+            width: 36px;
+            height: 36px;
+            background: var(--emas);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            color: var(--hijau-tua);
+            font-weight: 900;
         }
-        .nav-menu { display: flex; list-style: none; gap: 4px; align-items: center; }
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 4px;
+            align-items: center;
+        }
         .nav-menu li a {
-            color: rgba(255,255,255,0.85); text-decoration: none; font-size: 0.9rem;
-            font-weight: 500; padding: 8px 16px; border-radius: 50px; transition: var(--transisi);
+            color: rgba(255, 255, 255, 0.85);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 50px;
+            transition: var(--transisi);
         }
-        .nav-menu li a:hover, .nav-menu li a.active { color: var(--putih); background: rgba(255,255,255,0.15); }
-        .nav-menu li a.active { background: var(--emas); color: var(--hijau-tua); font-weight: 600; }
-        .hamburger { display: none; flex-direction: column; cursor: pointer; gap: 5px; }
-        .hamburger span { width: 28px; height: 3px; background: var(--putih); border-radius: 3px; transition: var(--transisi); }
+        .nav-menu li a:hover,
+        .nav-menu li a.active {
+            color: var(--putih);
+            background: rgba(255, 255, 255, 0.15);
+        }
+        .nav-menu li a.active {
+            background: var(--emas);
+            color: var(--hijau-tua);
+            font-weight: 600;
+        }
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+        .hamburger span {
+            width: 28px;
+            height: 3px;
+            background: var(--putih);
+            border-radius: 3px;
+            transition: var(--transisi);
+        }
 
         /* ==================== SECTION HEADER ==================== */
-        .section-header { text-align: center; margin-bottom: 60px; }
-        .section-label {
-            display: inline-block; background: rgba(11,79,58,0.08); color: var(--hijau-tua);
-            padding: 6px 16px; border-radius: 50px; font-size: 0.8rem; font-weight: 700;
-            letter-spacing: 2px; text-transform: uppercase; margin-bottom: 16px;
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
         }
-        .section-title { font-size: 2.5rem; font-weight: 800; margin-bottom: 16px; letter-spacing: -0.5px; }
-        .section-subtitle { font-size: 1.1rem; color: var(--teks-abu); max-width: 650px; margin: 0 auto; }
+        .section-label {
+            display: inline-block;
+            background: rgba(11, 79, 58, 0.08);
+            color: var(--hijau-tua);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+            letter-spacing: -0.5px;
+        }
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--teks-abu);
+            max-width: 650px;
+            margin: 0 auto;
+        }
 
         /* ==================== HERO ==================== */
         .hero {
-            min-height: 100vh; display: flex; align-items: center; justify-content: center;
-            position: relative; background: linear-gradient(135deg, #072e22 0%, #0B4F3A 30%, #0a3d2e 60%, #051f17 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background: linear-gradient(135deg, #072e22, #0B4F3A 30%, #0a3d2e 60%, #051f17);
             overflow: hidden;
         }
-        .hero-particles { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; }
+        .hero-particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
         .particle {
-            position: absolute; background: rgba(201,168,76,0.08); border-radius: 4px;
+            position: absolute;
+            background: rgba(201, 168, 76, 0.08);
+            border-radius: 4px;
             animation: floatParticle 20s infinite ease-in-out;
         }
-        .particle:nth-child(1) { width:60px; height:60px; top:10%; left:5%; }
-        .particle:nth-child(2) { width:80px; height:80px; top:60%; left:80%; animation-delay:-5s; }
-        .particle:nth-child(3) { width:40px; height:40px; top:30%; left:70%; animation-delay:-10s; }
-        .particle:nth-child(4) { width:100px; height:100px; top:70%; left:15%; animation-delay:-15s; }
-        .particle:nth-child(5) { width:50px; height:50px; top:50%; left:50%; animation-delay:-8s; }
-        .particle:nth-child(6) { width:30px; height:70px; top:20%; left:40%; animation-delay:-12s; }
-        .particle:nth-child(7) { width:70px; height:30px; top:80%; left:60%; animation-delay:-3s; }
-        @keyframes floatParticle {
-            0%,100% { transform:translateY(0) rotate(0deg); opacity:1; }
-            25% { transform:translateY(-30px) rotate(5deg); opacity:0.6; }
-            50% { transform:translateY(-15px) rotate(3deg); opacity:0.8; }
-            75% { transform:translateY(-40px) rotate(-3deg); opacity:0.5; }
+        .particle:nth-child(1) {
+            width: 60px;
+            height: 60px;
+            top: 10%;
+            left: 5%;
         }
-        .hero-content { text-align: center; position: relative; z-index: 2; max-width: 800px; padding: 0 24px; }
-        .trisula-container { margin-bottom: 30px; }
+        .particle:nth-child(2) {
+            width: 80px;
+            height: 80px;
+            top: 60%;
+            left: 80%;
+            animation-delay: -5s;
+        }
+        .particle:nth-child(3) {
+            width: 40px;
+            height: 40px;
+            top: 30%;
+            left: 70%;
+            animation-delay: -10s;
+        }
+        .particle:nth-child(4) {
+            width: 100px;
+            height: 100px;
+            top: 70%;
+            left: 15%;
+            animation-delay: -15s;
+        }
+        .particle:nth-child(5) {
+            width: 50px;
+            height: 50px;
+            top: 50%;
+            left: 50%;
+            animation-delay: -8s;
+        }
+        .particle:nth-child(6) {
+            width: 30px;
+            height: 70px;
+            top: 20%;
+            left: 40%;
+            animation-delay: -12s;
+        }
+        .particle:nth-child(7) {
+            width: 70px;
+            height: 30px;
+            top: 80%;
+            left: 60%;
+            animation-delay: -3s;
+        }
+        @keyframes floatParticle {
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+            25% {
+                transform: translateY(-30px) rotate(5deg);
+                opacity: 0.6;
+            }
+            50% {
+                transform: translateY(-15px) rotate(3deg);
+                opacity: 0.8;
+            }
+            75% {
+                transform: translateY(-40px) rotate(-3deg);
+                opacity: 0.5;
+            }
+        }
+        .hero-content {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 0 24px;
+        }
+        .trisula-container {
+            margin-bottom: 30px;
+        }
         .trisula-svg {
-            width: 120px; filter: drop-shadow(0 0 40px rgba(201,168,76,0.5));
+            width: 120px;
+            filter: drop-shadow(0 0 40px rgba(201, 168, 76, 0.5));
             animation: glowPulse 3s ease-in-out infinite;
         }
         @keyframes glowPulse {
-            0%,100% { filter:drop-shadow(0 0 30px rgba(201,168,76,0.4)); }
-            50% { filter:drop-shadow(0 0 60px rgba(201,168,76,0.8)); }
+            0%,
+            100% {
+                filter: drop-shadow(0 0 30px rgba(201, 168, 76, 0.4));
+            }
+            50% {
+                filter: drop-shadow(0 0 60px rgba(201, 168, 76, 0.8));
+            }
         }
         .hero-badge {
-            display: inline-block; background: rgba(201,168,76,0.2);
-            border: 1px solid rgba(201,168,76,0.4); color: var(--emas);
-            padding: 8px 20px; border-radius: 50px; font-size: 0.85rem;
-            font-weight: 600; letter-spacing: 1px; margin-bottom: 24px; text-transform: uppercase;
+            display: inline-block;
+            background: rgba(201, 168, 76, 0.2);
+            border: 1px solid rgba(201, 168, 76, 0.4);
+            color: var(--emas);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 24px;
+            text-transform: uppercase;
         }
-        .hero h1 { font-size: 3.5rem; font-weight: 900; color: var(--putih); line-height: 1.2; margin-bottom: 20px; }
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: var(--putih);
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
         .hero h1 .highlight {
             background: linear-gradient(135deg, var(--emas), #f0d78c, var(--emas));
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
-        .hero-subtitle { font-size: 1.2rem; color: rgba(255,255,255,0.8); margin-bottom: 40px; }
-        .hero-subtitle strong { color: var(--emas); font-weight: 600; }
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 40px;
+        }
+        .hero-subtitle strong {
+            color: var(--emas);
+            font-weight: 600;
+        }
         .btn-primary {
-            display: inline-flex; align-items: center; gap: 10px;
-            background: var(--emas); color: var(--hijau-tua); padding: 16px 32px;
-            border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 1rem;
-            transition: var(--transisi); cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--emas);
+            color: var(--hijau-tua);
+            padding: 16px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: var(--transisi);
+            cursor: pointer;
         }
-        .btn-primary:hover { background: #d4b65e; transform: translateY(-2px); box-shadow: 0 10px 40px rgba(201,168,76,0.4); }
-        .btn-primary:hover i { transform: translateY(4px); }
+        .btn-primary:hover {
+            background: #d4b65e;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 40px rgba(201, 168, 76, 0.4);
+        }
+        .btn-primary:hover i {
+            transform: translateY(4px);
+        }
         .scroll-indicator {
-            position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%);
-            display: flex; flex-direction: column; align-items: center; gap: 8px; z-index: 2;
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            z-index: 2;
         }
-        .scroll-indicator span { font-size: 0.75rem; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 2px; }
-        .scroll-mouse { width: 26px; height: 42px; border: 2px solid rgba(255,255,255,0.4); border-radius: 14px; display: flex; justify-content: center; padding-top: 8px; }
-        .scroll-dot { width: 5px; height: 5px; background: var(--emas); border-radius: 50%; animation: scrollAnim 1.5s ease-in-out infinite; }
-        @keyframes scrollAnim { 0%,100% { transform:translateY(0); opacity:1; } 50% { transform:translateY(12px); opacity:0.3; } }
+        .scroll-indicator span {
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.5);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .scroll-mouse {
+            width: 26px;
+            height: 42px;
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            border-radius: 14px;
+            display: flex;
+            justify-content: center;
+            padding-top: 8px;
+        }
+        .scroll-dot {
+            width: 5px;
+            height: 5px;
+            background: var(--emas);
+            border-radius: 50%;
+            animation: scrollAnim 1.5s ease-in-out infinite;
+        }
+        @keyframes scrollAnim {
+            0%,
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            50% {
+                transform: translateY(12px);
+                opacity: 0.3;
+            }
+        }
 
         /* ==================== TENTANG KPA ==================== */
-        .tentang-section { padding: 100px 0; background: var(--putih); }
-        .pilar-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 50px; }
+        .tentang-section {
+            padding: 100px 0;
+            background: var(--putih);
+        }
+        .pilar-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+            margin-top: 50px;
+        }
         .pilar-card {
-            background: var(--putih); border: 1px solid var(--abu-sedang); border-radius: 20px;
-            padding: 36px 28px; transition: all 0.4s cubic-bezier(0.25,0.8,0.25,1.2);
-            position: relative; overflow: hidden;
+            background: var(--putih);
+            border: 1px solid var(--abu-sedang);
+            border-radius: 20px;
+            padding: 36px 28px;
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1.2);
+            position: relative;
+            overflow: hidden;
         }
         .pilar-card::before {
-            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px;
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
             background: linear-gradient(90deg, var(--hijau-tua), var(--emas));
-            transform: scaleX(0); transform-origin: left; transition: transform 0.4s ease;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
         }
-        .pilar-card:hover::before { transform: scaleX(1); }
-        .pilar-card:hover { transform: translateY(-8px); box-shadow: 0 20px 60px rgba(0,0,0,0.08); border-color: transparent; }
+        .pilar-card:hover::before {
+            transform: scaleX(1);
+        }
+        .pilar-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+            border-color: transparent;
+        }
         .pilar-icon {
-            width: 60px; height: 60px; border-radius: 16px; display: flex; align-items: center;
-            justify-content: center; font-size: 1.6rem; margin-bottom: 20px;
+            width: 60px;
+            height: 60px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            margin-bottom: 20px;
         }
-        .pilar-icon.gold { background: linear-gradient(135deg, rgba(201,168,76,0.2), rgba(201,168,76,0.1)); color: var(--emas); }
-        .pilar-icon.green { background: linear-gradient(135deg, rgba(11,79,58,0.15), rgba(11,79,58,0.05)); color: var(--hijau-tua); }
-        .pilar-card h3 { font-size: 1.3rem; font-weight: 700; margin-bottom: 8px; }
-        .pilar-card .pilar-tag { font-size: 0.75rem; font-weight: 700; color: var(--emas); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px; display: block; }
-        .pilar-card p { font-size: 0.95rem; color: var(--teks-abu); }
-        .pilar-card ul { list-style: none; margin-top: 12px; }
-        .pilar-card ul li { font-size: 0.9rem; color: var(--teks-abu); padding: 4px 0 4px 20px; position: relative; }
-        .pilar-card ul li::before { content: '→'; position: absolute; left: 0; color: var(--emas); font-weight: 600; }
-        .pilar-card.featured { border-color: rgba(201,168,76,0.3); background: linear-gradient(180deg, rgba(201,168,76,0.04) 0%, #fff 100%); }
+        .pilar-icon.gold {
+            background: linear-gradient(135deg, rgba(201, 168, 76, 0.2), rgba(201, 168, 76, 0.1));
+            color: var(--emas);
+        }
+        .pilar-icon.green {
+            background: linear-gradient(135deg, rgba(11, 79, 58, 0.15), rgba(11, 79, 58, 0.05));
+            color: var(--hijau-tua);
+        }
+        .pilar-card h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .pilar-card .pilar-tag {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--emas);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+            display: block;
+        }
+        .pilar-card p {
+            font-size: 0.95rem;
+            color: var(--teks-abu);
+        }
+        .pilar-card ul {
+            list-style: none;
+            margin-top: 12px;
+        }
+        .pilar-card ul li {
+            font-size: 0.9rem;
+            color: var(--teks-abu);
+            padding: 4px 0 4px 20px;
+            position: relative;
+        }
+        .pilar-card ul li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--emas);
+            font-weight: 600;
+        }
+        .pilar-card.featured {
+            border-color: rgba(201, 168, 76, 0.3);
+            background: linear-gradient(180deg, rgba(201, 168, 76, 0.04), #fff);
+        }
 
         /* ==================== PROYEK ==================== */
-        .proyek-section { padding: 100px 0; background: var(--abu-muda); }
-        .proyek-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-        .proyek-image .img-placeholder {
-            width: 100%; aspect-ratio: 4/3; background: linear-gradient(135deg, var(--hijau-tua), #0a3d2e);
-            border-radius: 20px; display: flex; align-items: center; justify-content: center;
-            color: rgba(255,255,255,0.3); font-size: 4rem;
+        .proyek-section {
+            padding: 100px 0;
+            background: var(--abu-muda);
         }
-        .proyek-content h2 { font-size: 2rem; font-weight: 800; margin-bottom: 16px; }
+        .proyek-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        .proyek-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 20px;
+        }
         .badge-reward {
-            display: inline-flex; align-items: center; gap: 8px;
-            background: linear-gradient(135deg, var(--emas), #b8942f); color: var(--putih);
-            padding: 10px 20px; border-radius: 50px; font-size: 0.85rem; font-weight: 700;
-            margin-bottom: 24px; box-shadow: 0 4px 20px rgba(201,168,76,0.3);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, var(--emas), #b8942f);
+            color: var(--putih);
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 24px;
+            box-shadow: 0 4px 20px rgba(201, 168, 76, 0.3);
         }
-        .proyek-content h3 { font-size: 1.1rem; font-weight: 700; color: var(--hijau-tua); margin: 20px 0 8px; }
-        .proyek-content p { font-size: 1rem; color: var(--teks-abu); line-height: 1.8; }
+        .proyek-content h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--hijau-tua);
+            margin: 20px 0 8px;
+        }
+        .proyek-content p {
+            font-size: 1rem;
+            color: var(--teks-abu);
+            line-height: 1.8;
+        }
 
         /* ==================== METODOLOGI ==================== */
-        .metodologi-section { padding: 100px 0; background: var(--putih); }
-        .metodologi-steps { display: flex; gap: 0; position: relative; margin-top: 50px; }
+        .metodologi-section {
+            padding: 100px 0;
+            background: var(--putih);
+        }
+        .metodologi-steps {
+            display: flex;
+            gap: 0;
+            position: relative;
+            margin-top: 50px;
+        }
         .metodologi-steps::before {
-            content: ''; position: absolute; top: 40px; left: 15%; right: 15%; height: 3px;
-            background: linear-gradient(90deg, var(--emas), var(--hijau-tua), var(--emas)); border-radius: 2px; z-index: 0;
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 15%;
+            right: 15%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--emas), var(--hijau-tua), var(--emas));
+            border-radius: 2px;
+            z-index: 0;
         }
-        .step-card { flex: 1; text-align: center; position: relative; z-index: 1; padding: 0 16px; }
+        .step-card {
+            flex: 1;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            padding: 0 16px;
+        }
         .step-number {
-            width: 80px; height: 80px; border-radius: 50%; background: var(--putih);
-            border: 4px solid var(--hijau-tua); display: flex; align-items: center; justify-content: center;
-            margin: 0 auto 24px; font-size: 2rem; font-weight: 900; color: var(--hijau-tua);
-            transition: all 0.4s cubic-bezier(0.25,0.8,0.25,1.2);
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: var(--putih);
+            border: 4px solid var(--hijau-tua);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--hijau-tua);
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1.2);
         }
-        .step-card:hover .step-number { background: var(--hijau-tua); color: var(--putih); transform: scale(1.1); box-shadow: 0 10px 40px rgba(11,79,58,0.3); }
-        .step-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; }
-        .step-card p { font-size: 0.9rem; color: var(--teks-abu); }
-        .step-tools { display: inline-flex; flex-wrap: wrap; gap: 6px; justify-content: center; margin-top: 12px; }
-        .step-tool { background: rgba(11,79,58,0.08); color: var(--hijau-tua); padding: 4px 12px; border-radius: 50px; font-size: 0.75rem; font-weight: 600; }
+        .step-card:hover .step-number {
+            background: var(--hijau-tua);
+            color: var(--putih);
+            transform: scale(1.1);
+            box-shadow: 0 10px 40px rgba(11, 79, 58, 0.3);
+        }
+        .step-card h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .step-card p {
+            font-size: 0.9rem;
+            color: var(--teks-abu);
+        }
+        .step-tools {
+            display: inline-flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            justify-content: center;
+            margin-top: 12px;
+        }
+        .step-tool {
+            background: rgba(11, 79, 58, 0.08);
+            color: var(--hijau-tua);
+            padding: 4px 12px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
 
         /* ==================== HASIL ==================== */
-        .hasil-section { padding: 100px 0; background: var(--abu-muda); }
-        .hasil-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 50px; }
-        .hasil-card { background: var(--putih); border-radius: 20px; padding: 36px; box-shadow: 0 4px 20px rgba(0,0,0,0.04); }
-        .hasil-card h3 { font-size: 1.2rem; font-weight: 700; display: flex; align-items: center; gap: 10px; }
-        .card-badge { display: inline-block; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; padding: 4px 12px; border-radius: 50px; margin-bottom: 20px; }
-        .card-badge.kuantitatif { background: rgba(11,79,58,0.1); color: var(--hijau-tua); }
-        .card-badge.kualitatif { background: rgba(201,168,76,0.15); color: #8b6914; }
-        .chart-container { position: relative; width: 100%; max-width: 400px; margin: 20px auto; height: 280px; }
-        .chart-container canvas { width: 100% !important; height: 100% !important; }
-        .hasil-narasi { font-size: 0.95rem; color: var(--teks-abu); margin-top: 16px; padding: 16px; background: var(--abu-muda); border-radius: 12px; border-left: 4px solid var(--emas); }
-        .quote-carousel { position: relative; overflow: hidden; min-height: 200px; margin-top: 16px; }
-        .quote-slide { position: absolute; top: 0; left: 0; width: 100%; opacity: 0; transition: opacity 0.8s ease; }
-        .quote-slide.active { opacity: 1; position: relative; }
-        .quote-card { background: var(--abu-muda); border-radius: 16px; padding: 24px; }
-        .quote-card .quote-icon { font-size: 2.5rem; color: var(--emas); opacity: 0.3; margin-bottom: 8px; }
-        .quote-card p { font-size: 1rem; font-style: italic; margin-bottom: 12px; }
-        .quote-card .quote-author { font-size: 0.85rem; font-weight: 700; color: var(--hijau-tua); }
-        .quote-card .quote-role { font-size: 0.8rem; color: var(--teks-abu); }
-        .quote-dots { display: flex; gap: 8px; justify-content: center; margin-top: 16px; }
-        .quote-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--abu-sedang); cursor: pointer; transition: all 0.3s; }
-        .quote-dot.active { background: var(--emas); transform: scale(1.3); }
-        .btn-outline { display: inline-flex; align-items: center; gap: 8px; background: transparent; color: var(--hijau-tua); border: 2px solid var(--hijau-tua); padding: 12px 24px; border-radius: 50px; text-decoration: none; font-weight: 600; transition: var(--transisi); }
-        .btn-outline:hover { background: var(--hijau-tua); color: var(--putih); }
-        .btn-center { text-align: center; margin-top: 40px; }
+        .hasil-section {
+            padding: 100px 0;
+            background: var(--abu-muda);
+        }
+        .hasil-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 50px;
+        }
+        .hasil-card {
+            background: var(--putih);
+            border-radius: 20px;
+            padding: 36px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+        }
+        .hasil-card h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .card-badge {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 4px 12px;
+            border-radius: 50px;
+            margin-bottom: 20px;
+        }
+        .card-badge.kuantitatif {
+            background: rgba(11, 79, 58, 0.1);
+            color: var(--hijau-tua);
+        }
+        .card-badge.kualitatif {
+            background: rgba(201, 168, 76, 0.15);
+            color: #8b6914;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+            margin: 20px auto;
+            height: 280px;
+        }
+        .chart-container canvas {
+            width: 100% !important;
+            height: 100% !important;
+        }
+        .hasil-narasi {
+            font-size: 0.95rem;
+            color: var(--teks-abu);
+            margin-top: 16px;
+            padding: 16px;
+            background: var(--abu-muda);
+            border-radius: 12px;
+            border-left: 4px solid var(--emas);
+        }
+        .btn-outline {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: transparent;
+            color: var(--hijau-tua);
+            border: 2px solid var(--hijau-tua);
+            padding: 12px 24px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transisi);
+        }
+        .btn-outline:hover {
+            background: var(--hijau-tua);
+            color: var(--putih);
+        }
+        .btn-center {
+            text-align: center;
+            margin-top: 40px;
+        }
 
         /* ==================== CAPAIAN ==================== */
-        .capaian-section { padding: 100px 0; background: var(--putih); }
-        .capaian-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 50px; }
-        .capaian-card { text-align: center; padding: 32px 20px; border-radius: 20px; border: 1px solid var(--abu-sedang); transition: all 0.3s; }
-        .capaian-card:hover { transform: translateY(-6px); box-shadow: 0 16px 48px rgba(0,0,0,0.06); border-color: var(--emas); }
-        .capaian-icon { width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; font-size: 1.3rem; }
-        .capaian-icon.engagement { background: rgba(11,79,58,0.1); color: var(--hijau-tua); }
-        .capaian-icon.kaderisasi { background: rgba(201,168,76,0.15); color: #8b6914; }
-        .capaian-icon.internalisasi { background: rgba(11,79,58,0.08); color: var(--hijau-tua); }
-        .capaian-icon.sustainability { background: rgba(201,168,76,0.1); color: #8b6914; }
-        .capaian-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 4px; }
-        .capaian-card .capaian-en { font-size: 0.75rem; color: var(--emas); font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 12px; display: block; }
-        .capaian-card p { font-size: 0.85rem; color: var(--teks-abu); }
+        .capaian-section {
+            padding: 100px 0;
+            background: var(--putih);
+        }
+        .capaian-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            margin-top: 50px;
+        }
+        .capaian-card {
+            text-align: center;
+            padding: 32px 20px;
+            border-radius: 20px;
+            border: 1px solid var(--abu-sedang);
+            transition: all 0.3s;
+        }
+        .capaian-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.06);
+            border-color: var(--emas);
+        }
+        .capaian-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+            font-size: 1.3rem;
+        }
+        .capaian-icon.engagement {
+            background: rgba(11, 79, 58, 0.1);
+            color: var(--hijau-tua);
+        }
+        .capaian-icon.kaderisasi {
+            background: rgba(201, 168, 76, 0.15);
+            color: #8b6914;
+        }
+        .capaian-icon.internalisasi {
+            background: rgba(11, 79, 58, 0.08);
+            color: var(--hijau-tua);
+        }
+        .capaian-icon.sustainability {
+            background: rgba(201, 168, 76, 0.1);
+            color: #8b6914;
+        }
+        .capaian-card h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .capaian-card .capaian-en {
+            font-size: 0.75rem;
+            color: var(--emas);
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            display: block;
+        }
+        .capaian-card p {
+            font-size: 0.85rem;
+            color: var(--teks-abu);
+        }
 
         /* ==================== TIM ==================== */
-        .tim-section { padding: 100px 0; background: var(--putih); }
-        .mentor-badge { display: flex; justify-content: center; gap: 16px; margin-bottom: 40px; flex-wrap: wrap; }
-        .mentor-tag { background: linear-gradient(135deg, rgba(201,168,76,0.15), rgba(201,168,76,0.05)); border: 1px solid rgba(201,168,76,0.3); color: #8b6914; padding: 10px 20px; border-radius: 50px; font-size: 0.9rem; font-weight: 600; display: flex; align-items: center; gap: 8px; }
-        .tim-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-        .tim-card { background: var(--putih); border: 1px solid var(--abu-sedang); border-radius: 20px; padding: 32px 24px; text-align: center; transition: all 0.4s cubic-bezier(0.25,0.8,0.25,1.2); position: relative; overflow: hidden; }
-        .tim-card::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 0; height: 3px; background: var(--emas); border-radius: 2px; transition: width 0.4s ease; }
-        .tim-card:hover::after { width: 60%; }
-        .tim-card:hover { transform: translateY(-8px); box-shadow: 0 20px 60px rgba(0,0,0,0.08); border-color: rgba(201,168,76,0.3); }
-        .tim-card.featured-member { border-color: rgba(201,168,76,0.4); background: linear-gradient(180deg, rgba(201,168,76,0.06) 0%, #fff 100%); }
-        .tim-avatar { width: 72px; height: 72px; border-radius: 50%; background: linear-gradient(135deg, var(--hijau-tua), #0d6b4e); color: var(--putih); display: flex; align-items: center; justify-content: center; font-size: 1.8rem; font-weight: 700; margin: 0 auto 16px; position: relative; }
-        .tim-card.featured-member .tim-avatar { background: linear-gradient(135deg, var(--emas), #b8942f); box-shadow: 0 8px 32px rgba(201,168,76,0.3); }
-        .tim-avatar .status-dot { position: absolute; bottom: 4px; right: 4px; width: 14px; height: 14px; background: #22c55e; border: 3px solid var(--putih); border-radius: 50%; }
-        .tim-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 4px; }
-        .tim-role { font-size: 0.8rem; color: var(--emas); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; display: block; }
-        .tim-divisi { display: inline-block; background: rgba(11,79,58,0.08); color: var(--hijau-tua); padding: 4px 12px; border-radius: 50px; font-size: 0.75rem; font-weight: 600; }
-        .tim-status { font-size: 0.75rem; color: #22c55e; font-weight: 600; margin-top: 8px; display: flex; align-items: center; justify-content: center; gap: 4px; }
+        .tim-section {
+            padding: 100px 0;
+            background: var(--putih);
+        }
+        .mentor-badge {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+        .mentor-badge>div {
+            text-align: center;
+        }
+        .mentor-badge>div img {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--emas);
+            box-shadow: 0 8px 24px rgba(201, 168, 76, 0.3);
+        }
+        .mentor-badge>div div {
+            margin-top: 12px;
+            font-weight: 700;
+            font-size: 1.05rem;
+            color: var(--hijau-tua);
+        }
+        .mentor-badge>div div i {
+            color: var(--emas);
+        }
+        .tim-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        .tim-card {
+            background: var(--putih);
+            border: 1px solid var(--abu-sedang);
+            border-radius: 20px;
+            padding: 32px 24px;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1.2);
+            position: relative;
+            overflow: hidden;
+        }
+        .tim-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 3px;
+            background: var(--emas);
+            border-radius: 2px;
+            transition: width 0.4s ease;
+        }
+        .tim-card:hover::after {
+            width: 60%;
+        }
+        .tim-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+            border-color: rgba(201, 168, 76, 0.3);
+        }
+        .tim-card.featured-member {
+            border-color: rgba(201, 168, 76, 0.4);
+            background: linear-gradient(180deg, rgba(201, 168, 76, 0.06), #fff);
+        }
+        .tim-avatar {
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            margin: 0 auto 16px;
+            position: relative;
+        }
+        .tim-avatar img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .tim-card.featured-member .tim-avatar {
+            box-shadow: 0 8px 32px rgba(201, 168, 76, 0.3);
+        }
+        .tim-avatar .status-dot {
+            position: absolute;
+            bottom: 4px;
+            right: 4px;
+            width: 14px;
+            height: 14px;
+            background: #22c55e;
+            border: 3px solid var(--putih);
+            border-radius: 50%;
+        }
+        .tim-card h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .tim-role {
+            font-size: 0.8rem;
+            color: var(--emas);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+            display: block;
+        }
+        .tim-divisi {
+            display: inline-block;
+            background: rgba(11, 79, 58, 0.08);
+            color: var(--hijau-tua);
+            padding: 4px 12px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        .tim-status {
+            font-size: 0.75rem;
+            color: #22c55e;
+            font-weight: 600;
+            margin-top: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+        }
 
         /* ==================== TIMELINE ==================== */
-        .timeline-section { padding: 100px 0; background: var(--hijau-tua); color: var(--putih); }
-        .timeline-section .section-label { background: rgba(255,255,255,0.1); color: var(--emas); }
-        .timeline-section .section-title { color: var(--putih); }
-        .timeline-section .section-subtitle { color: rgba(255,255,255,0.7); }
-        .timeline { position: relative; max-width: 700px; margin: 50px auto 0; padding-left: 40px; }
-        .timeline::before { content: ''; position: absolute; left: 18px; top: 0; bottom: 0; width: 3px; background: linear-gradient(180deg, var(--emas), rgba(201,168,76,0.3), var(--emas)); border-radius: 2px; }
-        .timeline-item { position: relative; margin-bottom: 40px; padding-left: 30px; }
-        .timeline-item:last-child { margin-bottom: 0; }
-        .timeline-item::before { content: ''; position: absolute; left: -26px; top: 6px; width: 16px; height: 16px; background: var(--emas); border: 3px solid var(--hijau-tua); border-radius: 50%; z-index: 2; box-shadow: 0 0 0 4px rgba(201,168,76,0.2); }
-        .timeline-item.highlight::before { background: var(--putih); border-color: var(--emas); animation: pulseTimeline 2s infinite; }
-        @keyframes pulseTimeline { 0%,100% { box-shadow: 0 0 0 4px rgba(201,168,76,0.3); } 50% { box-shadow: 0 0 0 12px rgba(201,168,76,0.1); } }
-        .timeline-date { font-size: 0.85rem; font-weight: 700; color: var(--emas); margin-bottom: 6px; }
-        .timeline-item h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 6px; }
-        .timeline-item p { font-size: 0.9rem; color: rgba(255,255,255,0.7); }
-        .timeline-detail { margin-top: 10px; padding: 14px 18px; background: rgba(255,255,255,0.06); border-radius: 12px; border-left: 3px solid var(--emas); }
-        .timeline-detail ul { list-style: none; }
-        .timeline-detail ul li { font-size: 0.85rem; color: rgba(255,255,255,0.75); padding: 3px 0 3px 16px; position: relative; }
-        .timeline-detail ul li::before { content: '•'; position: absolute; left: 0; color: var(--emas); }
+        .timeline-section {
+            padding: 100px 0;
+            background: var(--hijau-tua);
+            color: var(--putih);
+        }
+        .timeline-section .section-label {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--emas);
+        }
+        .timeline-section .section-title {
+            color: var(--putih);
+        }
+        .timeline-section .section-subtitle {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        .timeline {
+            position: relative;
+            max-width: 700px;
+            margin: 50px auto 0;
+            padding-left: 40px;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 18px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, var(--emas), rgba(201, 168, 76, 0.3), var(--emas));
+            border-radius: 2px;
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+            padding-left: 30px;
+        }
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -26px;
+            top: 6px;
+            width: 16px;
+            height: 16px;
+            background: var(--emas);
+            border: 3px solid var(--hijau-tua);
+            border-radius: 50%;
+            z-index: 2;
+            box-shadow: 0 0 0 4px rgba(201, 168, 76, 0.2);
+        }
+        .timeline-item.highlight::before {
+            background: var(--putih);
+            border-color: var(--emas);
+            animation: pulseTimeline 2s infinite;
+        }
+        @keyframes pulseTimeline {
+            0%,
+            100% {
+                box-shadow: 0 0 0 4px rgba(201, 168, 76, 0.3);
+            }
+            50% {
+                box-shadow: 0 0 0 12px rgba(201, 168, 76, 0.1);
+            }
+        }
+        .timeline-date {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--emas);
+            margin-bottom: 6px;
+        }
+        .timeline-item h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+        .timeline-item p {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        .timeline-detail {
+            margin-top: 10px;
+            padding: 14px 18px;
+            background: rgba(255, 255, 255, 0.06);
+            border-radius: 12px;
+            border-left: 3px solid var(--emas);
+        }
+        .timeline-detail ul {
+            list-style: none;
+        }
+        .timeline-detail ul li {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.75);
+            padding: 3px 0 3px 16px;
+            position: relative;
+        }
+        .timeline-detail ul li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--emas);
+        }
 
         /* ==================== ANGGARAN ==================== */
-        .anggaran-section { padding: 100px 0; background: var(--abu-muda); }
-        .anggaran-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 40px; margin-top: 50px; }
-        .anggaran-total { background: linear-gradient(135deg, var(--hijau-tua), #0a3d2e); border-radius: 20px; padding: 40px 32px; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--putih); }
-        .anggaran-total .label { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px; color: rgba(255,255,255,0.6); margin-bottom: 12px; }
-        .anggaran-total .nominal { font-size: 3rem; font-weight: 900; color: var(--emas); }
-        .anggaran-total .keterangan { font-size: 0.85rem; color: rgba(255,255,255,0.6); margin-top: 8px; }
-        .anggaran-sumber { background: var(--putih); border-radius: 20px; padding: 36px; box-shadow: 0 4px 20px rgba(0,0,0,0.04); }
-        .anggaran-sumber h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 24px; }
-        .anggaran-list { list-style: none; display: flex; flex-direction: column; gap: 16px; }
-        .anggaran-list li { display: flex; gap: 14px; padding: 14px 16px; background: var(--abu-muda); border-radius: 12px; }
-        .anggaran-list .sumber-icon { width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-        .sumber-icon.komunitas { background: rgba(11,79,58,0.12); color: var(--hijau-tua); }
-        .sumber-icon.reward { background: rgba(201,168,76,0.2); color: #8b6914; }
-        .sumber-icon.swadaya { background: rgba(11,79,58,0.08); color: var(--hijau-tua); }
-        .sumber-icon.natura { background: rgba(201,168,76,0.12); color: #8b6914; }
-        .anggaran-list .sumber-info h4 { font-size: 0.95rem; font-weight: 700; }
-        .anggaran-list .sumber-info p { font-size: 0.8rem; color: var(--teks-abu); }
-        .anggaran-narasi { margin-top: 32px; padding: 20px; background: rgba(201,168,76,0.06); border-radius: 14px; border: 1px solid rgba(201,168,76,0.2); font-size: 0.95rem; color: var(--teks-abu); text-align: center; font-style: italic; }
+        .anggaran-section {
+            padding: 100px 0;
+            background: var(--abu-muda);
+        }
+        .anggaran-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 40px;
+            margin-top: 50px;
+        }
+        .anggaran-total {
+            background: linear-gradient(135deg, var(--hijau-tua), #0a3d2e);
+            border-radius: 20px;
+            padding: 40px 32px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--putih);
+        }
+        .anggaran-total .label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 12px;
+        }
+        .anggaran-total .nominal {
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--emas);
+        }
+        .anggaran-total .keterangan {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.6);
+            margin-top: 8px;
+        }
+        .anggaran-sumber {
+            background: var(--putih);
+            border-radius: 20px;
+            padding: 36px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+        }
+        .anggaran-sumber h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 24px;
+        }
+        .anggaran-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .anggaran-list li {
+            display: flex;
+            gap: 14px;
+            padding: 14px 16px;
+            background: var(--abu-muda);
+            border-radius: 12px;
+        }
+        .anggaran-list .sumber-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .sumber-icon.komunitas {
+            background: rgba(11, 79, 58, 0.12);
+            color: var(--hijau-tua);
+        }
+        .sumber-icon.reward {
+            background: rgba(201, 168, 76, 0.2);
+            color: #8b6914;
+        }
+        .sumber-icon.swadaya {
+            background: rgba(11, 79, 58, 0.08);
+            color: var(--hijau-tua);
+        }
+        .sumber-icon.natura {
+            background: rgba(201, 168, 76, 0.12);
+            color: #8b6914;
+        }
+        .anggaran-list .sumber-info h4 {
+            font-size: 0.95rem;
+            font-weight: 700;
+        }
+        .anggaran-list .sumber-info p {
+            font-size: 0.8rem;
+            color: var(--teks-abu);
+        }
+        .anggaran-narasi {
+            margin-top: 32px;
+            padding: 20px;
+            background: rgba(201, 168, 76, 0.06);
+            border-radius: 14px;
+            border: 1px solid rgba(201, 168, 76, 0.2);
+            font-size: 0.95rem;
+            color: var(--teks-abu);
+            text-align: center;
+            font-style: italic;
+        }
 
         /* ==================== REFLEKSI ==================== */
-        .refleksi-section { padding: 100px 0; background: var(--putih); }
-        .refleksi-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 50px; }
-        .accordion-group { display: flex; flex-direction: column; gap: 12px; }
-        .accordion-item { border: 1px solid var(--abu-sedang); border-radius: 14px; overflow: hidden; }
-        .accordion-header { padding: 18px 20px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 600; font-size: 0.95rem; }
-        .accordion-header:hover { background: rgba(11,79,58,0.03); }
-        .accordion-icon { width: 32px; height: 32px; border-radius: 50%; background: rgba(11,79,58,0.08); display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: var(--transisi); color: var(--hijau-tua); }
-        .accordion-item.active .accordion-icon { background: var(--hijau-tua); color: var(--putih); transform: rotate(45deg); }
-        .accordion-body { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
-        .accordion-item.active .accordion-body { max-height: 200px; }
-        .accordion-body-inner { padding: 0 20px 18px; }
-        .accordion-body-inner p { font-size: 0.9rem; color: var(--teks-abu); }
-        .solusi-label { display: inline-block; background: rgba(201,168,76,0.12); color: #8b6914; font-weight: 700; font-size: 0.75rem; padding: 3px 10px; border-radius: 50px; margin-bottom: 8px; text-transform: uppercase; }
-        .pembelajaran-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-        .pembelajaran-card { background: var(--abu-muda); border-radius: 16px; padding: 24px 20px; transition: all 0.3s; border: 1px solid transparent; }
-        .pembelajaran-card:hover { background: var(--putih); border-color: rgba(201,168,76,0.3); transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.06); }
-        .pembelajaran-card .icon-box { width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; margin-bottom: 12px; }
-        .icon-box.leadership { background: rgba(11,79,58,0.1); color: var(--hijau-tua); }
-        .icon-box.collab { background: rgba(201,168,76,0.15); color: #8b6914; }
-        .icon-box.tolerance { background: rgba(11,79,58,0.08); color: var(--hijau-tua); }
-        .icon-box.action { background: rgba(201,168,76,0.2); color: #8b6914; }
-        .pembelajaran-card h4 { font-size: 0.9rem; font-weight: 700; margin-bottom: 4px; }
-        .pembelajaran-card p { font-size: 0.8rem; color: var(--teks-abu); }
-        .refleksi-quote { text-align: center; margin-top: 48px; padding: 32px 40px; background: rgba(11,79,58,0.03); border-radius: 20px; border: 1px solid rgba(201,168,76,0.15); max-width: 700px; margin-left: auto; margin-right: auto; }
-        .refleksi-quote p { font-size: 1.15rem; font-weight: 600; font-style: italic; }
-        .refleksi-quote .quote-line { display: inline-block; width: 40px; height: 3px; background: var(--emas); border-radius: 2px; margin-top: 16px; }
+        .refleksi-section {
+            padding: 100px 0;
+            background: var(--putih);
+        }
+        .refleksi-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            margin-top: 50px;
+        }
+        .accordion-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .accordion-item {
+            border: 1px solid var(--abu-sedang);
+            border-radius: 14px;
+            overflow: hidden;
+        }
+        .accordion-header {
+            padding: 18px 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+        .accordion-header:hover {
+            background: rgba(11, 79, 58, 0.03);
+        }
+        .accordion-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: rgba(11, 79, 58, 0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: var(--transisi);
+            color: var(--hijau-tua);
+        }
+        .accordion-item.active .accordion-icon {
+            background: var(--hijau-tua);
+            color: var(--putih);
+            transform: rotate(45deg);
+        }
+        .accordion-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+        .accordion-item.active .accordion-body {
+            max-height: 200px;
+        }
+        .accordion-body-inner {
+            padding: 0 20px 18px;
+        }
+        .accordion-body-inner p {
+            font-size: 0.9rem;
+            color: var(--teks-abu);
+        }
+        .solusi-label {
+            display: inline-block;
+            background: rgba(201, 168, 76, 0.12);
+            color: #8b6914;
+            font-weight: 700;
+            font-size: 0.75rem;
+            padding: 3px 10px;
+            border-radius: 50px;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+        .pembelajaran-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+        .pembelajaran-card {
+            background: var(--abu-muda);
+            border-radius: 16px;
+            padding: 24px 20px;
+            transition: all 0.3s;
+            border: 1px solid transparent;
+        }
+        .pembelajaran-card:hover {
+            background: var(--putih);
+            border-color: rgba(201, 168, 76, 0.3);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
+        }
+        .pembelajaran-card .icon-box {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            margin-bottom: 12px;
+        }
+        .icon-box.leadership {
+            background: rgba(11, 79, 58, 0.1);
+            color: var(--hijau-tua);
+        }
+        .icon-box.collab {
+            background: rgba(201, 168, 76, 0.15);
+            color: #8b6914;
+        }
+        .icon-box.tolerance {
+            background: rgba(11, 79, 58, 0.08);
+            color: var(--hijau-tua);
+        }
+        .icon-box.action {
+            background: rgba(201, 168, 76, 0.2);
+            color: #8b6914;
+        }
+        .pembelajaran-card h4 {
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .pembelajaran-card p {
+            font-size: 0.8rem;
+            color: var(--teks-abu);
+        }
+        .refleksi-quote {
+            text-align: center;
+            margin-top: 48px;
+            padding: 32px 40px;
+            background: rgba(11, 79, 58, 0.03);
+            border-radius: 20px;
+            border: 1px solid rgba(201, 168, 76, 0.15);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .refleksi-quote p {
+            font-size: 1.15rem;
+            font-weight: 600;
+            font-style: italic;
+        }
+        .refleksi-quote .quote-line {
+            display: inline-block;
+            width: 40px;
+            height: 3px;
+            background: var(--emas);
+            border-radius: 2px;
+            margin-top: 16px;
+        }
 
-        /* ==================== DOKUMENTASI - FIX 16:9 ==================== */
-        .dokumentasi-section { padding: 100px 0; background: var(--abu-muda); }
-        .galeri-grid { 
-            display: grid; 
-            grid-template-columns: repeat(3, 1fr); 
-            gap: 20px; 
-            margin-top: 50px; 
+        /* ==================== DOKUMENTASI ==================== */
+        .dokumentasi-section {
+            padding: 100px 0;
+            background: var(--abu-muda);
         }
-        .galeri-item { 
-            position: relative; 
-            border-radius: 16px; 
-            overflow: hidden; 
-            cursor: pointer; 
-            aspect-ratio: 16 / 9; /* 16:9 FULL */
-            background: linear-gradient(135deg, var(--hijau-tua), #0a3d2e); 
-            transition: all 0.3s; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            color: rgba(255,255,255,0.4); 
-            font-size: 2.5rem; 
+        .galeri-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 50px;
         }
-        .galeri-item:hover { 
-            transform: scale(1.03); 
-            box-shadow: 0 16px 48px rgba(0,0,0,0.15); 
-            color: rgba(255,255,255,0.6); 
+        .galeri-item {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            aspect-ratio: 16 / 9;
+            background: linear-gradient(135deg, var(--hijau-tua), #0a3d2e);
+            transition: all 0.3s;
         }
-        .galeri-item img { 
-            width: 100%; 
-            height: 100%; 
-            object-fit: cover; 
-            position: absolute; 
-            top: 0; 
-            left: 0; 
+        .galeri-item:hover {
+            transform: scale(1.03);
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.15);
         }
-        .galeri-overlay { 
-            position: absolute; 
-            bottom: 0; 
-            left: 0; 
-            width: 100%; 
-            background: linear-gradient(transparent, rgba(0,0,0,0.85)); 
-            padding: 40px 16px 16px; 
-            opacity: 0; 
-            transition: all 0.3s; 
+        .galeri-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
         }
-        .galeri-item:hover .galeri-overlay { opacity: 1; }
-        .galeri-overlay span { 
-            color: var(--putih); 
-            font-size: 0.85rem; 
-            font-weight: 500; 
+        .galeri-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.85));
+            padding: 40px 16px 16px;
+            opacity: 0;
+            transition: all 0.3s;
+        }
+        .galeri-item:hover .galeri-overlay {
+            opacity: 1;
+        }
+        .galeri-overlay span {
+            color: var(--putih);
+            font-size: 0.85rem;
+            font-weight: 500;
             display: block;
-            text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
         }
-
-        .btn-drive { display: inline-flex; align-items: center; gap: 10px; background: var(--putih); color: var(--hijau-tua); border: 2px solid var(--abu-sedang); padding: 14px 28px; border-radius: 50px; text-decoration: none; font-weight: 600; transition: var(--transisi); }
-        .btn-drive:hover { border-color: var(--hijau-tua); background: var(--hijau-tua); color: var(--putih); }
+        .btn-drive {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--putih);
+            color: var(--hijau-tua);
+            border: 2px solid var(--abu-sedang);
+            padding: 14px 28px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transisi);
+        }
+        .btn-drive:hover {
+            border-color: var(--hijau-tua);
+            background: var(--hijau-tua);
+            color: var(--putih);
+        }
 
         /* ==================== FOOTER ==================== */
-        .footer { padding: 60px 0 30px; background: var(--hijau-tua); text-align: center; color: rgba(255,255,255,0.65); }
-        .footer-trisula { margin-bottom: 24px; }
-        .footer p { max-width: 550px; margin: 0 auto 24px; }
-        .footer p strong { color: var(--emas); }
-        .footer-social { display: flex; gap: 16px; justify-content: center; margin-bottom: 24px; }
-        .footer-social a { width: 40px; height: 40px; border-radius: 50%; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.7); text-decoration: none; transition: var(--transisi); }
-        .footer-social a:hover { background: var(--emas); color: var(--hijau-tua); }
-        .footer-divider { width: 60px; height: 2px; background: rgba(201,168,76,0.3); margin: 0 auto 24px; }
-        .footer-copy { font-size: 0.8rem; color: rgba(255,255,255,0.4); }
+        .footer {
+            padding: 60px 0 30px;
+            background: var(--hijau-tua);
+            text-align: center;
+            color: rgba(255, 255, 255, 0.65);
+        }
+        .footer-trisula {
+            margin-bottom: 24px;
+        }
+        .footer p {
+            max-width: 550px;
+            margin: 0 auto 24px;
+        }
+        .footer p strong {
+            color: var(--emas);
+        }
+        .footer-social {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            margin-bottom: 24px;
+        }
+        .footer-social a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: var(--transisi);
+        }
+        .footer-social a:hover {
+            background: var(--emas);
+            color: var(--hijau-tua);
+        }
+        .footer-divider {
+            width: 60px;
+            height: 2px;
+            background: rgba(201, 168, 76, 0.3);
+            margin: 0 auto 24px;
+        }
+        .footer-copy {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.4);
+        }
 
         /* ==================== BACK TO TOP ==================== */
-        .back-to-top { position: fixed; bottom: 32px; right: 32px; width: 48px; height: 48px; background: var(--hijau-tua); color: var(--putih); border: none; border-radius: 50%; cursor: pointer; font-size: 1.1rem; display: flex; align-items: center; justify-content: center; opacity: 0; visibility: hidden; transition: var(--transisi); z-index: 999; box-shadow: 0 8px 24px rgba(11,79,58,0.3); }
-        .back-to-top.visible { opacity: 1; visibility: visible; }
-        .back-to-top:hover { background: var(--emas); color: var(--hijau-tua); }
+        .back-to-top {
+            position: fixed;
+            bottom: 32px;
+            right: 32px;
+            width: 48px;
+            height: 48px;
+            background: var(--hijau-tua);
+            color: var(--putih);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transisi);
+            z-index: 999;
+            box-shadow: 0 8px 24px rgba(11, 79, 58, 0.3);
+        }
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        .back-to-top:hover {
+            background: var(--emas);
+            color: var(--hijau-tua);
+        }
 
         /* ==================== RESPONSIVE ==================== */
         @media (max-width: 768px) {
-            .hamburger { display: flex; }
-            .nav-menu { position: fixed; top: 0; right: -100%; width: 280px; height: 100vh; background: rgba(11,79,58,0.98); flex-direction: column; padding: 80px 30px 30px; transition: var(--transisi); }
-            .nav-menu.active { right: 0; }
-            .hero h1 { font-size: 2.2rem; }
-            .section-title { font-size: 1.8rem; }
-            .pilar-grid, .capaian-grid { grid-template-columns: 1fr; }
-            .proyek-grid, .hasil-grid, .refleksi-grid { grid-template-columns: 1fr; }
-            .anggaran-grid { grid-template-columns: 1fr; }
-            .tim-grid { grid-template-columns: 1fr 1fr; }
-            .metodologi-steps { flex-direction: column; gap: 32px; }
-            .metodologi-steps::before { display: none; }
-            .step-card { text-align: left; display: flex; gap: 16px; }
-            .step-number { width: 50px; height: 50px; font-size: 1.3rem; margin: 0; flex-shrink: 0; }
-            .pembelajaran-grid { grid-template-columns: 1fr; }
-            
-            /* GALERI 16:9 DI HP */
-            .galeri-grid { 
-                grid-template-columns: repeat(2, 1fr); 
-                gap: 12px; 
+            .hamburger {
+                display: flex;
             }
-            .galeri-item { 
-                aspect-ratio: 16 / 9; 
-                border-radius: 12px; 
+            .nav-menu {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 280px;
+                height: 100vh;
+                background: rgba(11, 79, 58, 0.98);
+                flex-direction: column;
+                padding: 80px 30px 30px;
+                transition: var(--transisi);
             }
-            .galeri-overlay { 
-                padding: 30px 10px 12px; 
+            .nav-menu.active {
+                right: 0;
             }
-            .galeri-overlay span { 
-                font-size: 0.7rem; 
+            .hero h1 {
+                font-size: 2.2rem;
             }
-            
-            .timeline { padding-left: 30px; }
-            .timeline-item { padding-left: 20px; }
-            .timeline-item::before { left: -21px; width: 12px; height: 12px; }
-            
-            .container { padding: 0 16px !important; }
-            .hasil-card table thead { display: none; }
-            .hasil-card table tr { display: flex; flex-wrap: wrap; padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); }
-            .hasil-card table td { display: flex; flex: 1 1 45%; padding: 4px 6px !important; font-size: 0.75rem !important; justify-content: space-between; }
-            .hasil-card table td::before { content: attr(data-label); font-weight: 600; color: var(--hijau-tua); }
-            .chart-container { height: 220px !important; max-width: 100% !important; }
-            .badge-reward { font-size: 0.75rem !important; padding: 8px 14px !important; flex-wrap: wrap; }
-            .refleksi-quote { padding: 24px 16px !important; }
-            .refleksi-quote p { font-size: 1rem !important; }
-            .anggaran-total .nominal { font-size: 2rem !important; }
-            .anggaran-sumber { padding: 24px 18px !important; }
-            .mentor-badge { gap: 30px !important; }
-            .mentor-badge > div img { width: 70px !important; height: 70px !important; }
-            .btn-primary, .btn-outline, .btn-drive { font-size: 0.85rem !important; padding: 12px 20px !important; text-align: center; justify-content: center; }
+            .section-title {
+                font-size: 1.8rem;
+            }
+            .pilar-grid,
+            .capaian-grid {
+                grid-template-columns: 1fr;
+            }
+            .proyek-grid,
+            .hasil-grid,
+            .refleksi-grid {
+                grid-template-columns: 1fr;
+            }
+            .anggaran-grid {
+                grid-template-columns: 1fr;
+            }
+            .tim-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .metodologi-steps {
+                flex-direction: column;
+                gap: 32px;
+            }
+            .metodologi-steps::before {
+                display: none;
+            }
+            .step-card {
+                text-align: left;
+                display: flex;
+                gap: 16px;
+            }
+            .step-number {
+                width: 50px;
+                height: 50px;
+                font-size: 1.3rem;
+                margin: 0;
+                flex-shrink: 0;
+            }
+            .pembelajaran-grid {
+                grid-template-columns: 1fr;
+            }
+            .galeri-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+            .galeri-item {
+                aspect-ratio: 16 / 9;
+                border-radius: 12px;
+            }
+            .galeri-overlay {
+                padding: 30px 10px 12px;
+            }
+            .galeri-overlay span {
+                font-size: 0.7rem;
+            }
+            .timeline {
+                padding-left: 30px;
+            }
+            .timeline-item {
+                padding-left: 20px;
+            }
+            .timeline-item::before {
+                left: -21px;
+                width: 12px;
+                height: 12px;
+            }
+            .container {
+                padding: 0 16px !important;
+            }
+            .hasil-card table thead {
+                display: none;
+            }
+            .hasil-card table tr {
+                display: flex;
+                flex-wrap: wrap;
+                padding: 8px 0;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            }
+            .hasil-card table td {
+                display: flex;
+                flex: 1 1 45%;
+                padding: 4px 6px !important;
+                font-size: 0.75rem !important;
+                justify-content: space-between;
+            }
+            .hasil-card table td::before {
+                content: attr(data-label);
+                font-weight: 600;
+                color: var(--hijau-tua);
+            }
+            .chart-container {
+                height: 220px !important;
+                max-width: 100% !important;
+            }
+            .badge-reward {
+                font-size: 0.75rem !important;
+                padding: 8px 14px !important;
+                flex-wrap: wrap;
+            }
+            .refleksi-quote {
+                padding: 24px 16px !important;
+            }
+            .refleksi-quote p {
+                font-size: 1rem !important;
+            }
+            .anggaran-total .nominal {
+                font-size: 2rem !important;
+            }
+            .anggaran-sumber {
+                padding: 24px 18px !important;
+            }
+            .mentor-badge {
+                gap: 30px !important;
+            }
+            .mentor-badge>div img {
+                width: 70px !important;
+                height: 70px !important;
+            }
+            .btn-primary,
+            .btn-outline,
+            .btn-drive {
+                font-size: 0.85rem !important;
+                padding: 12px 20px !important;
+                text-align: center;
+                justify-content: center;
+            }
         }
-        
+
         @media (max-width: 480px) {
-            .tim-grid { grid-template-columns: 1fr; }
-            .galeri-grid { 
-                grid-template-columns: 1fr 1fr; 
-                gap: 10px; 
+            .tim-grid {
+                grid-template-columns: 1fr;
             }
-            .galeri-item { 
-                aspect-ratio: 16 / 9; 
-                border-radius: 10px; 
+            .galeri-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 10px;
             }
-            .galeri-overlay { 
-                padding: 20px 8px 10px; 
+            .galeri-item {
+                aspect-ratio: 16 / 9;
+                border-radius: 10px;
             }
-            .galeri-overlay span { 
-                font-size: 0.6rem; 
+            .galeri-overlay {
+                padding: 20px 8px 10px;
             }
-            .capaian-grid { grid-template-columns: 1fr; }
+            .galeri-overlay span {
+                font-size: 0.6rem;
+            }
+            .capaian-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
+
 <body>
     <!-- ========== NAVIGATION ========== -->
     <nav class="navbar" id="navbar">
@@ -513,45 +1596,39 @@
     <!-- ========== HERO ========== -->
     <section class="hero" id="beranda">
         <div class="hero-particles">
-            <div class="particle"></div><div class="particle"></div><div class="particle"></div>
-            <div class="particle"></div><div class="particle"></div><div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
             <div class="particle"></div>
         </div>
         <div class="hero-content" data-aos="fade-up" data-aos-duration="1200">
             <div class="trisula-container">
-               <svg class="trisula-svg" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-        <linearGradient id="gEmas" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#F3DFA2"/>
-            <stop offset="100%" stop-color="#C9A84C"/>
-        </linearGradient>
-        <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-            <feGaussianBlur stdDeviation="2" result="blur"/>
-            <feMerge>
-                <feMergeNode in="blur"/>
-                <feMergeNode in="SourceGraphic"/>
-            </feMerge>
-        </filter>
-    </defs>
-
-    <!-- Gagang -->
-    <rect x="93" y="130" width="14" height="70" rx="7" fill="url(#gEmas)" filter="url(#glow)"/>
-
-    <!-- Palang horizontal -->
-    <rect x="55" y="128" width="90" height="8" rx="4" fill="url(#gEmas)"/>
-
-    <!-- Mata tengah (vertikal) -->
-    <path d="M100 20 C104 55, 96 90, 100 130" stroke="url(#gEmas)" stroke-width="8" stroke-linecap="round" filter="url(#glow)"/>
-    <circle cx="100" cy="18" r="6" fill="url(#gEmas)"/>
-
-    <!-- Mata kiri -->
-    <path d="M62 55 C58 90, 66 120, 70 130" stroke="url(#gEmas)" stroke-width="6" stroke-linecap="round"/>
-    <circle cx="61" cy="53" r="5" fill="url(#gEmas)"/>
-
-    <!-- Mata kanan -->
-    <path d="M138 55 C142 90, 134 120, 130 130" stroke="url(#gEmas)" stroke-width="6" stroke-linecap="round"/>
-    <circle cx="139" cy="53" r="5" fill="url(#gEmas)"/>
-</svg>
+                <svg class="trisula-svg" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="gEmas" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0%" stop-color="#F3DFA2" />
+                            <stop offset="100%" stop-color="#C9A84C" />
+                        </linearGradient>
+                        <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+                            <feGaussianBlur stdDeviation="2" result="blur" />
+                            <feMerge>
+                                <feMergeNode in="blur" />
+                                <feMergeNode in="SourceGraphic" />
+                            </feMerge>
+                        </filter>
+                    </defs>
+                    <rect x="93" y="130" width="14" height="70" rx="7" fill="url(#gEmas)" filter="url(#glow)" />
+                    <rect x="55" y="128" width="90" height="8" rx="4" fill="url(#gEmas)" />
+                    <path d="M100 20 C104 55, 96 90, 100 130" stroke="url(#gEmas)" stroke-width="8" stroke-linecap="round" filter="url(#glow)" />
+                    <circle cx="100" cy="18" r="6" fill="url(#gEmas)" />
+                    <path d="M62 55 C58 90, 66 120, 70 130" stroke="url(#gEmas)" stroke-width="6" stroke-linecap="round" />
+                    <circle cx="61" cy="53" r="5" fill="url(#gEmas)" />
+                    <path d="M138 55 C142 90, 134 120, 130 130" stroke="url(#gEmas)" stroke-width="6" stroke-linecap="round" />
+                    <circle cx="139" cy="53" r="5" fill="url(#gEmas)" />
+                </svg>
             </div>
             <div class="hero-badge">Kaderisasi Pemuda Ahmadiyah 2026</div>
             <h1><span class="highlight">Project</span><br>Toleransi</h1>
@@ -608,11 +1685,9 @@
                 <p class="section-subtitle">Riset mixed-methods untuk memetakan dan memperkuat toleransi di kalangan generasi muda Bogor.</p>
             </div>
             <div class="proyek-grid">
-               <div class="proyek-image" data-aos="fade-right">
-    <img src="https://i.ibb.co.com/KxnqqvPg/Whats-App-Image-2026-07-16-at-20-32-28.jpg" 
-         alt="Tim Hizeb Usman sedang berdiskusi dan mengerjakan project toleransi"
-         style="width:100%; height:100%; object-fit:cover; border-radius:20px;">
-</div>
+                <div class="proyek-image" data-aos="fade-right">
+                    <img src="https://i.ibb.co.com/KxnqqvPg/Whats-App-Image-2026-07-16-at-20-32-28.jpg" alt="Tim Hizeb Usman sedang berdiskusi dan mengerjakan project toleransi" />
+                </div>
                 <div class="proyek-content" data-aos="fade-left">
                     <div class="badge-reward"><i class="fa-solid fa-star"></i> Lolos Presentasi Bonding Day & Mendapat Reward</div>
                     <p>Project ini mengusung riset <strong>mixed-methods</strong> — menggabungkan survei kuantitatif dan wawancara kualitatif mendalam.</p>
@@ -672,126 +1747,102 @@
             </div>
             <div class="hasil-grid">
                 <div class="hasil-card" data-aos="fade-right">
-    <span class="card-badge kuantitatif">Kuantitatif • n=69</span>
-    <h3><i class="fa-solid fa-chart-bar" style="color:#0B4F3A;"></i> Survei Toleransi Keberagamaan</h3>
-    
-    <!-- Detail Responden -->
-    <div style="display:flex; gap:16px; flex-wrap:wrap; margin-bottom:16px; font-size:0.8rem; color:var(--teks-abu);">
-        <span><i class="fa-solid fa-school"></i> SMAN 1 Parung, SMPN 1 Bojonggede, SMPN 2 Kemang</span>
-        <span><i class="fa-solid fa-users"></i> 35 Laki-laki • 34 Perempuan</span>
-    </div>
-
-    <!-- Grafik Batang 4 Dimensi -->
-    <div class="chart-container" style="height:320px;">
-        <canvas id="chartToleransi"></canvas>
-    </div>
-
-    <!-- Tabel Ringkasan -->
-    <div style="overflow-x:auto; margin-top:16px;">
-        <table style="width:100%; border-collapse:collapse; font-size:0.8rem;">
-            <thead>
-                <tr style="background:rgba(11,79,58,0.05);">
-                    <th style="padding:8px; text-align:left;">Dimensi</th>
-                    <th style="padding:8px;">Skor</th>
-                    <th style="padding:8px;">%</th>
-                    <th style="padding:8px;">Kategori</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td style="padding:8px;" data-label="Dimensi">A. Pengetahuan</td>
-                    <td style="padding:8px; text-align:center;" data-label="Skor">1371/1725</td>
-                    <td style="padding:8px; text-align:center; font-weight:700; color:#0B4F3A;" data-label="%">79.48%</td>
-                    <td style="padding:8px; text-align:center;" data-label="Kategori"><span style="background:#0B4F3A; color:#fff; padding:2px 8px; border-radius:12px; font-size:0.7rem;">Tinggi</span></td>
-                </tr>
-                <tr style="background:rgba(201,168,76,0.05);">
-                    <td style="padding:8px;" data-label="Dimensi">B. Sikap Kesediaan</td>
-                    <td style="padding:8px; text-align:center;" data-label="Skor">1478/1725</td>
-                    <td style="padding:8px; text-align:center; font-weight:700; color:#C9A84C;" data-label="%">85.68%</td>
-                    <td style="padding:8px; text-align:center;" data-label="Kategori"><span style="background:#C9A84C; color:#000; padding:2px 8px; border-radius:12px; font-size:0.7rem;">Sangat Tinggi</span></td>
-                </tr>
-                <tr>
-                    <td style="padding:8px;" data-label="Dimensi">C. Respons Diskriminasi</td>
-                    <td style="padding:8px; text-align:center;" data-label="Skor">1429/1725</td>
-                    <td style="padding:8px; text-align:center; font-weight:700; color:#0B4F3A;" data-label="%">82.84%</td>
-                    <td style="padding:8px; text-align:center;" data-label="Kategori"><span style="background:#0B4F3A; color:#fff; padding:2px 8px; border-radius:12px; font-size:0.7rem;">Sangat Tinggi</span></td>
-                </tr>
-                <tr style="background:rgba(201,168,76,0.05);">
-                    <td style="padding:8px;" data-label="Dimensi">D. Harapan Pendidikan</td>
-                    <td style="padding:8px; text-align:center;" data-label="Skor">1422/1725</td>
-                    <td style="padding:8px; text-align:center; font-weight:700; color:#C9A84C;" data-label="%">82.43%</td>
-                    <td style="padding:8px; text-align:center;" data-label="Kategori"><span style="background:#C9A84C; color:#000; padding:2px 8px; border-radius:12px; font-size:0.7rem;">Sangat Tinggi</span></td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
-    <!-- Narasi Kesimpulan -->
-    <div class="hasil-narasi" style="margin-top:16px;">
-        <strong>Total Keseluruhan: 82.61% (5700/6900) — Kategori Sangat Tinggi.</strong><br>
-        Siswa menunjukkan pengetahuan yang baik tentang minoritas, kesediaan interaksi yang sangat tinggi, 
-        respons aktif terhadap diskriminasi, serta antusiasme besar pada pendidikan toleransi berbasis pengalaman. 
-        Skor <em>Pengetahuan</em> (79.48%) tetap perlu penguatan agar sikap inklusif yang sudah tumbuh dilandasi 
-        wawasan faktual yang lebih utuh.
-    </div>
-</div>
+                    <span class="card-badge kuantitatif">Kuantitatif • n=69</span>
+                    <h3><i class="fa-solid fa-chart-bar" style="color:#0B4F3A;"></i> Survei Toleransi Keberagamaan</h3>
+                    <div style="display:flex; gap:16px; flex-wrap:wrap; margin-bottom:16px; font-size:0.8rem; color:var(--teks-abu);">
+                        <span><i class="fa-solid fa-school"></i> SMAN 1 Parung, SMPN 1 Bojonggede, SMPN 2 Kemang</span>
+                        <span><i class="fa-solid fa-users"></i> 35 Laki-laki • 34 Perempuan</span>
+                    </div>
+                    <div class="chart-container" style="height:320px;">
+                        <canvas id="chartToleransi"></canvas>
+                    </div>
+                    <div style="overflow-x:auto; margin-top:16px;">
+                        <table style="width:100%; border-collapse:collapse; font-size:0.8rem;">
+                            <thead>
+                                <tr style="background:rgba(11,79,58,0.05);">
+                                    <th style="padding:8px; text-align:left;">Dimensi</th>
+                                    <th style="padding:8px;">Skor</th>
+                                    <th style="padding:8px;">%</th>
+                                    <th style="padding:8px;">Kategori</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="padding:8px;" data-label="Dimensi">A. Pengetahuan</td>
+                                    <td style="padding:8px; text-align:center;" data-label="Skor">1371/1725</td>
+                                    <td style="padding:8px; text-align:center; font-weight:700; color:#0B4F3A;" data-label="%">79.48%</td>
+                                    <td style="padding:8px; text-align:center;" data-label="Kategori"><span style="background:#0B4F3A; color:#fff; padding:2px 8px; border-radius:12px; font-size:0.7rem;">Tinggi</span></td>
+                                </tr>
+                                <tr style="background:rgba(201,168,76,0.05);">
+                                    <td style="padding:8px;" data-label="Dimensi">B. Sikap Kesediaan</td>
+                                    <td style="padding:8px; text-align:center;" data-label="Skor">1478/1725</td>
+                                    <td style="padding:8px; text-align:center; font-weight:700; color:#C9A84C;" data-label="%">85.68%</td>
+                                    <td style="padding:8px; text-align:center;" data-label="Kategori"><span style="background:#C9A84C; color:#000; padding:2px 8px; border-radius:12px; font-size:0.7rem;">Sangat Tinggi</span></td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:8px;" data-label="Dimensi">C. Respons Diskriminasi</td>
+                                    <td style="padding:8px; text-align:center;" data-label="Skor">1429/1725</td>
+                                    <td style="padding:8px; text-align:center; font-weight:700; color:#0B4F3A;" data-label="%">82.84%</td>
+                                    <td style="padding:8px; text-align:center;" data-label="Kategori"><span style="background:#0B4F3A; color:#fff; padding:2px 8px; border-radius:12px; font-size:0.7rem;">Sangat Tinggi</span></td>
+                                </tr>
+                                <tr style="background:rgba(201,168,76,0.05);">
+                                    <td style="padding:8px;" data-label="Dimensi">D. Harapan Pendidikan</td>
+                                    <td style="padding:8px; text-align:center;" data-label="Skor">1422/1725</td>
+                                    <td style="padding:8px; text-align:center; font-weight:700; color:#C9A84C;" data-label="%">82.43%</td>
+                                    <td style="padding:8px; text-align:center;" data-label="Kategori"><span style="background:#C9A84C; color:#000; padding:2px 8px; border-radius:12px; font-size:0.7rem;">Sangat Tinggi</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="hasil-narasi" style="margin-top:16px;">
+                        <strong>Total Keseluruhan: 82.61% (5700/6900) — Kategori Sangat Tinggi.</strong><br>
+                        Siswa menunjukkan pengetahuan yang baik tentang minoritas, kesediaan interaksi yang sangat tinggi,
+                        respons aktif terhadap diskriminasi, serta antusiasme besar pada pendidikan toleransi berbasis pengalaman.
+                        Skor <em>Pengetahuan</em> (79.48%) tetap perlu penguatan agar sikap inklusif yang sudah tumbuh dilandasi
+                        wawasan faktual yang lebih utuh.
+                    </div>
+                </div>
                 <div class="hasil-card" data-aos="fade-left" style="max-height:600px; overflow-y:auto;">
-    <span class="card-badge kualitatif">Kualitatif • 7 Narasumber</span>
-    <h3 style="margin-bottom:16px;"><i class="fa-solid fa-quote-right" style="color:#C9A84C;"></i> Kutipan Kunci Tokoh Lintas Agama</h3>
-    
-    <div style="display:flex; flex-direction:column; gap:12px;">
-        <!-- 1. Pdt. Geget - GPIB -->
-        <div style="background:var(--abu-muda); border-radius:12px; padding:14px 16px; border-left:4px solid #C9A84C;">
-            <div style="font-weight:700; font-size:0.9rem; color:var(--hijau-tua); margin-bottom:4px;">Pdt. Geget Elite S.H. — Kristen Protestan (GPIB)</div>
-            <p style="font-size:0.85rem; color:var(--teks-abu); margin:0; font-style:italic;">"Jangan takut untuk membuat komunitas di luar diri kita. Komunitas-komunitas sekarang udah banyak banget yang bisa berakar dari lintas agama. Apapun kegiatannya, yang penting kita punya goal-nya satu dan akarnya itu harus kebersamaan antara teman-teman lintas iman."</p>
-        </div>
-        
-        <!-- 2. Agus Widodo - Hindu -->
-        <div style="background:var(--abu-muda); border-radius:12px; padding:14px 16px; border-left:4px solid #C9A84C;">
-            <div style="font-weight:700; font-size:0.9rem; color:var(--hijau-tua); margin-bottom:4px;">Agus Widodo — Hindu</div>
-            <p style="font-size:0.85rem; color:var(--teks-abu); margin:0; font-style:italic;">"Tempatkan nilai kemanusiaan di atas nilai apapun. Ketika kita berteman seperti ini, jangan lihat itu agamanya apa, sukunya apa, tradisi budayanya apa, tapi kemanusiaannya. Lupakan dulu agamanya, lupakan tradisinya, tapi kemanusiaannya tempatkan di atas."</p>
-        </div>
-        
-        <!-- 3. Jemmy Mongan - OSZA -->
-        <div style="background:var(--abu-muda); border-radius:12px; padding:14px 16px; border-left:4px solid #C9A84C;">
-            <div style="font-weight:700; font-size:0.9rem; color:var(--hijau-tua); margin-bottom:4px;">Jemmy Mongan — Kristen OSZA</div>
-            <p style="font-size:0.85rem; color:var(--teks-abu); margin:0; font-style:italic;">"Yang penting buat kalian adalah bagaimana kita bergaul dengan semua orang yang bisa membantu kita untuk kenal dengan banyak tokoh agama. Kalau kamu sudah kenal baik, sudah ngopi bareng, sudah nongkrong bareng, gesekan-gesekan dikit buat kita mah kadang-kadang kita bercandain."</p>
-        </div>
-        
-        <!-- 4. Mln Syamsul Ulum - Islam/Ahmadiyah -->
-        <div style="background:var(--abu-muda); border-radius:12px; padding:14px 16px; border-left:4px solid #C9A84C;">
-            <div style="font-weight:700; font-size:0.9rem; color:var(--hijau-tua); margin-bottom:4px;">Mln. Syamsul Ulum — Islam (Ahmadiyah)</div>
-            <p style="font-size:0.85rem; color:var(--teks-abu); margin:0; font-style:italic;">"Tak kenal maka tak sayang. Untuk menjaga toleransi, kita harus saling mengenal ajarannya. Ketika kita saling mengenal, maka fitnah tidak akan ada. Orang yang belum mengenal Ahmadiyah pasti kena fitnah, tapi yang sudah kenal pasti tahu kebenarannya."</p>
-        </div>
-        
-        <!-- 5. Pdt. Dedanimrod Simatupang - GKP -->
-        <div style="background:var(--abu-muda); border-radius:12px; padding:14px 16px; border-left:4px solid #C9A84C;">
-            <div style="font-weight:700; font-size:0.9rem; color:var(--hijau-tua); margin-bottom:4px;">Pdt. Dedanimrod Simatupang — Kristen (GKP)</div>
-            <p style="font-size:0.85rem; color:var(--teks-abu); margin:0; font-style:italic;">"Allah menghendaki satu nilai penting yaitu xenophilia (persahabatan dengan yang asing), bukan xenophobia (takut pada yang asing). Berani terbuka pada yang asing. Berani terbuka bagi yang berbeda."</p>
-        </div>
-        
-        <!-- 6. Bhante Subharo - Buddha -->
-        <div style="background:var(--abu-muda); border-radius:12px; padding:14px 16px; border-left:4px solid #C9A84C;">
-            <div style="font-weight:700; font-size:0.9rem; color:var(--hijau-tua); margin-bottom:4px;">Bhante Subharo — Buddha</div>
-            <p style="font-size:0.85rem; color:var(--teks-abu); margin:0; font-style:italic;">"Dengan dasar pengikat ini (menghindari perbuatan buruk dan mengembangkan kebaikan), kalau semua dalam kemajemukan ini berpegang pada prinsip dasar moral ini, Bhante punya keyakinan kita bisa saling berbaur, bersatu."</p>
-        </div>
-        
-        <!-- 7. Ws. Yudhi Yap Brata - Konghucu -->
-        <div style="background:var(--abu-muda); border-radius:12px; padding:14px 16px; border-left:4px solid #C9A84C;">
-            <div style="font-weight:700; font-size:0.9rem; color:var(--hijau-tua); margin-bottom:4px;">Ws. Yudhi Yap Brata — Konghucu</div>
-            <p style="font-size:0.85rem; color:var(--teks-abu); margin:0; font-style:italic;">"Di empat penjuru lautan semua manusia itu bersaudara. Perbedaan itu ada bukan untuk saling menghancurkan, tapi saling melengkapi. Jangan memberikan apa yang tidak kita inginkan kepada orang lain."</p>
-        </div>
-    </div>
-</div>
-</div>
+                    <span class="card-badge kualitatif">Kualitatif • 7 Narasumber</span>
+                    <h3 style="margin-bottom:16px;"><i class="fa-solid fa-quote-right" style="color:#C9A84C;"></i> Kutipan Kunci Tokoh Lintas Agama</h3>
+                    <div style="display:flex; flex-direction:column; gap:12px;">
+                        <div style="background:var(--abu-muda); border-radius:12px; padding:14px 16px; border-left:4px solid #C9A84C;">
+                            <div style="font-weight:700; font-size:0.9rem; color:var(--hijau-tua); margin-bottom:4px;">Pdt. Geget Elite S.H. — Kristen Protestan (GPIB)</div>
+                            <p style="font-size:0.85rem; color:var(--teks-abu); margin:0; font-style:italic;">"Jangan takut untuk membuat komunitas di luar diri kita. Komunitas-komunitas sekarang udah banyak banget yang bisa berakar dari lintas agama. Apapun kegiatannya, yang penting kita punya goal-nya satu dan akarnya itu harus kebersamaan antara teman-teman lintas iman."</p>
+                        </div>
+                        <div style="background:var(--abu-muda); border-radius:12px; padding:14px 16px; border-left:4px solid #C9A84C;">
+                            <div style="font-weight:700; font-size:0.9rem; color:var(--hijau-tua); margin-bottom:4px;">Agus Widodo — Hindu</div>
+                            <p style="font-size:0.85rem; color:var(--teks-abu); margin:0; font-style:italic;">"Tempatkan nilai kemanusiaan di atas nilai apapun. Ketika kita berteman seperti ini, jangan lihat itu agamanya apa, sukunya apa, tradisi budayanya apa, tapi kemanusiaannya. Lupakan dulu agamanya, lupakan tradisinya, tapi kemanusiaannya tempatkan di atas."</p>
+                        </div>
+                        <div style="background:var(--abu-muda); border-radius:12px; padding:14px 16px; border-left:4px solid #C9A84C;">
+                            <div style="font-weight:700; font-size:0.9rem; color:var(--hijau-tua); margin-bottom:4px;">Jemmy Mongan — Kristen OSZA</div>
+                            <p style="font-size:0.85rem; color:var(--teks-abu); margin:0; font-style:italic;">"Yang penting buat kalian adalah bagaimana kita bergaul dengan semua orang yang bisa membantu kita untuk kenal dengan banyak tokoh agama. Kalau kamu sudah kenal baik, sudah ngopi bareng, sudah nongkrong bareng, gesekan-gesekan dikit buat kita mah kadang-kadang kita bercandain."</p>
+                        </div>
+                        <div style="background:var(--abu-muda); border-radius:12px; padding:14px 16px; border-left:4px solid #C9A84C;">
+                            <div style="font-weight:700; font-size:0.9rem; color:var(--hijau-tua); margin-bottom:4px;">Mln. Syamsul Ulum — Islam (Ahmadiyah)</div>
+                            <p style="font-size:0.85rem; color:var(--teks-abu); margin:0; font-style:italic;">"Tak kenal maka tak sayang. Untuk menjaga toleransi, kita harus saling mengenal ajarannya. Ketika kita saling mengenal, maka fitnah tidak akan ada. Orang yang belum mengenal Ahmadiyah pasti kena fitnah, tapi yang sudah kenal pasti tahu kebenarannya."</p>
+                        </div>
+                        <div style="background:var(--abu-muda); border-radius:12px; padding:14px 16px; border-left:4px solid #C9A84C;">
+                            <div style="font-weight:700; font-size:0.9rem; color:var(--hijau-tua); margin-bottom:4px;">Pdt. Dedanimrod Simatupang — Kristen (GKP)</div>
+                            <p style="font-size:0.85rem; color:var(--teks-abu); margin:0; font-style:italic;">"Allah menghendaki satu nilai penting yaitu xenophilia (persahabatan dengan yang asing), bukan xenophobia (takut pada yang asing). Berani terbuka pada yang asing. Berani terbuka bagi yang berbeda."</p>
+                        </div>
+                        <div style="background:var(--abu-muda); border-radius:12px; padding:14px 16px; border-left:4px solid #C9A84C;">
+                            <div style="font-weight:700; font-size:0.9rem; color:var(--hijau-tua); margin-bottom:4px;">Bhante Subharo — Buddha</div>
+                            <p style="font-size:0.85rem; color:var(--teks-abu); margin:0; font-style:italic;">"Dengan dasar pengikat ini (menghindari perbuatan buruk dan mengembangkan kebaikan), kalau semua dalam kemajemukan ini berpegang pada prinsip dasar moral ini, Bhante punya keyakinan kita bisa saling berbaur, bersatu."</p>
+                        </div>
+                        <div style="background:var(--abu-muda); border-radius:12px; padding:14px 16px; border-left:4px solid #C9A84C;">
+                            <div style="font-weight:700; font-size:0.9rem; color:var(--hijau-tua); margin-bottom:4px;">Ws. Yudhi Yap Brata — Konghucu</div>
+                            <p style="font-size:0.85rem; color:var(--teks-abu); margin:0; font-style:italic;">"Di empat penjuru lautan semua manusia itu bersaudara. Perbedaan itu ada bukan untuk saling menghancurkan, tapi saling melengkapi. Jangan memberikan apa yang tidak kita inginkan kepada orang lain."</p>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="btn-center" data-aos="fade-up">
-    <a href="https://drive.google.com/drive/folders/1iqiPwWFT9GxA-HYY-eQ5Iu8SW7x2ZkYP?usp=drive_link" 
-       target="_blank" 
-       class="btn-outline">
-        <i class="fa-brands fa-google-drive"></i> Baca Karya Tulis Ilmiah Lengkap
-    </a>
-</div>
+                <a href="https://drive.google.com/drive/folders/1iqiPwWFT9GxA-HYY-eQ5Iu8SW7x2ZkYP?usp=drive_link" target="_blank" class="btn-outline">
+                    <i class="fa-brands fa-google-drive"></i> Baca Karya Tulis Ilmiah Lengkap
+                </a>
+            </div>
+        </div>
     </section>
 
     <!-- ========== CAPAIAN ========== -->
@@ -812,7 +1863,6 @@
     </section>
 
     <!-- ========== TIM ========== -->
-        <!-- ========== TIM ========== -->
     <section class="tim-section" id="tim">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
@@ -820,142 +1870,69 @@
                 <h2 class="section-title">Tim Peneliti</h2>
                 <p class="section-subtitle">9 anggota aktif, dipandu mentor, terbagi dalam peran yang memberdayakan.</p>
             </div>
-            
-            <!-- MENTOR dengan FOTO -->
-            <div class="mentor-badge" data-aos="fade-up" style="display: flex; justify-content: center; gap: 60px; flex-wrap: wrap; margin-bottom: 40px;">
-                <div style="text-align: center;">
-                    <img src="https://i.ibb.co.com/k6sC86JN/Whats-App-Image-2026-07-14-at-15-59-43.jpg" 
-                         alt="Mentor Rahman" 
-                         style="width: 90px; height: 90px; border-radius: 50%; object-fit: cover; border: 4px solid var(--emas); box-shadow: 0 8px 24px rgba(201,168,76,0.3);">
-                    <div style="margin-top: 12px; font-weight: 700; font-size: 1.05rem; color: var(--hijau-tua);">
-                        <i class="fa-solid fa-star" style="color: var(--emas);"></i> Mentor: Iyza 'Ur Rahman Naweed
-                    </div>
+            <div class="mentor-badge" data-aos="fade-up">
+                <div>
+                    <img src="https://i.ibb.co.com/k6sC86JN/Whats-App-Image-2026-07-14-at-15-59-43.jpg" alt="Mentor Rahman" />
+                    <div><i class="fa-solid fa-star" style="color: var(--emas);"></i> Mentor: Iyza 'Ur Rahman Naweed</div>
                 </div>
-                <div style="text-align: center;">
-                    <img src="https://i.ibb.co.com/PGZbCM4N/Whats-App-Image-2026-07-14-at-15-58-42-2.jpg" 
-                         alt="Mentor Irfan" 
-                         style="width: 90px; height: 90px; border-radius: 50%; object-fit: cover; border: 4px solid var(--emas); box-shadow: 0 8px 24px rgba(201,168,76,0.3);">
-                    <div style="margin-top: 12px; font-weight: 700; font-size: 1.05rem; color: var(--hijau-tua);">
-                        <i class="fa-solid fa-star" style="color: var(--emas);"></i> Mentor: Irfan Ahmad
-                    </div>
+                <div>
+                    <img src="https://i.ibb.co.com/PGZbCM4N/Whats-App-Image-2026-07-14-at-15-58-42-2.jpg" alt="Mentor Irfan" />
+                    <div><i class="fa-solid fa-star" style="color: var(--emas);"></i> Mentor: Irfan Ahmad</div>
                 </div>
             </div>
 
-            <!-- TIM PENELITI (9 Anggota) -->
             <div class="tim-grid">
-                <!-- 1. Adil (Ketua) -->
                 <div class="tim-card featured-member" data-aos="fade-up" data-aos-delay="100">
-                    <div class="tim-avatar">
-                        <img src="https://i.ibb.co.com/k6Jp15gb/1781360805784.png" 
-                             alt="Adil Athary Arifin" 
-                             style="width:100%; height:100%; border-radius:50%; object-fit:cover;">
-                        <span class="status-dot"></span>
-                    </div>
+                    <div class="tim-avatar"><img src="https://i.ibb.co.com/k6Jp15gb/1781360805784.png" alt="Adil Athary Arifin" /><span class="status-dot"></span></div>
                     <h3>Adil Athary Arifin</h3>
                     <span class="tim-role">Ketua Hizeb</span>
                     <span class="tim-divisi">Koordinator & Penulis</span>
                     <div class="tim-status"><i class="fa-solid fa-circle"></i> Aktif</div>
                 </div>
-                
-                <!-- 2. Thufail -->
                 <div class="tim-card" data-aos="fade-up" data-aos-delay="150">
-                    <div class="tim-avatar">
-                        <img src="https://i.ibb.co.com/d32pXRy/Whats-App-Image-2026-07-14-at-15-59-34.jpg" 
-                             alt="Thufail Ahmad Ferrari" 
-                             style="width:100%; height:100%; border-radius:50%; object-fit:cover;">
-                        <span class="status-dot"></span>
-                    </div>
+                    <div class="tim-avatar"><img src="https://i.ibb.co.com/d32pXRy/Whats-App-Image-2026-07-14-at-15-59-34.jpg" alt="Thufail Ahmad Ferrari" /><span class="status-dot"></span></div>
                     <h3>Thufail Ahmad Ferrari</h3>
                     <span class="tim-divisi">Divisi Wawancara</span>
                     <div class="tim-status"><i class="fa-solid fa-circle"></i> Aktif</div>
                 </div>
-                
-                <!-- 3. Naseem -->
                 <div class="tim-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="tim-avatar">
-                        <img src="https://i.ibb.co.com/7dJLmSm7/Whats-App-Image-2026-07-14-at-15-58-41-2.jpg" 
-                             alt="Naseem Ahmad K." 
-                             style="width:100%; height:100%; border-radius:50%; object-fit:cover;">
-                        <span class="status-dot"></span>
-                    </div>
+                    <div class="tim-avatar"><img src="https://i.ibb.co.com/7dJLmSm7/Whats-App-Image-2026-07-14-at-15-58-41-2.jpg" alt="Naseem Ahmad K." /><span class="status-dot"></span></div>
                     <h3>Naseem Ahmad K.</h3>
                     <span class="tim-divisi">Divisi Wawancara</span>
                     <div class="tim-status"><i class="fa-solid fa-circle"></i> Aktif</div>
                 </div>
-                
-                <!-- 4. Adiyat -->
                 <div class="tim-card" data-aos="fade-up" data-aos-delay="250">
-                    <div class="tim-avatar">
-                        <img src="https://i.ibb.co.com/b59gQ0hv/Whats-App-Image-2026-07-14-at-15-58-41-1.jpg" 
-                             alt="Adiyat Fatin Ala" 
-                             style="width:100%; height:100%; border-radius:50%; object-fit:cover;">
-                        <span class="status-dot"></span>
-                    </div>
+                    <div class="tim-avatar"><img src="https://i.ibb.co.com/b59gQ0hv/Whats-App-Image-2026-07-14-at-15-58-41-1.jpg" alt="Adiyat Fatin Ala" /><span class="status-dot"></span></div>
                     <h3>Adiyat Fatin Ala</h3>
                     <span class="tim-divisi">Divisi Instrumen & Survei</span>
                     <div class="tim-status"><i class="fa-solid fa-circle"></i> Aktif</div>
                 </div>
-                
-                <!-- 5. Asya -->
                 <div class="tim-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="tim-avatar">
-                        <img src="https://i.ibb.co.com/YTTY8XFS/Whats-App-Image-2026-07-14-at-15-58-43-1.jpg" 
-                             alt="Asya Dillah Ahmad" 
-                             style="width:100%; height:100%; border-radius:50%; object-fit:cover;">
-                        <span class="status-dot"></span>
-                    </div>
+                    <div class="tim-avatar"><img src="https://i.ibb.co.com/YTTY8XFS/Whats-App-Image-2026-07-14-at-15-58-43-1.jpg" alt="Asya Dillah Ahmad" /><span class="status-dot"></span></div>
                     <h3>Asya Dillah Ahmad</h3>
                     <span class="tim-divisi">Divisi Instrumen & Survei</span>
                     <div class="tim-status"><i class="fa-solid fa-circle"></i> Aktif</div>
                 </div>
-                
-                <!-- 6. Sajeel -->
                 <div class="tim-card" data-aos="fade-up" data-aos-delay="350">
-                    <div class="tim-avatar">
-                        <img src="https://i.ibb.co.com/XxS0nNTC/Whats-App-Image-2026-07-14-at-15-58-42-1.jpg" 
-                             alt="Sajeel Ahmad" 
-                             style="width:100%; height:100%; border-radius:50%; object-fit:cover;">
-                        <span class="status-dot"></span>
-                    </div>
+                    <div class="tim-avatar"><img src="https://i.ibb.co.com/XxS0nNTC/Whats-App-Image-2026-07-14-at-15-58-42-1.jpg" alt="Sajeel Ahmad" /><span class="status-dot"></span></div>
                     <h3>Sajeel Ahmad</h3>
                     <span class="tim-divisi">Divisi Instrumen & Survei</span>
                     <div class="tim-status"><i class="fa-solid fa-circle"></i> Aktif</div>
                 </div>
-                
-                <!-- 7. Rayyan -->
                 <div class="tim-card" data-aos="fade-up" data-aos-delay="400">
-                    <div class="tim-avatar">
-                        <img src="https://i.ibb.co.com/C5ZPZqJS/Whats-App-Image-2026-07-14-at-15-58-43.jpg" 
-                             alt="Rayyan Maulana H." 
-                             style="width:100%; height:100%; border-radius:50%; object-fit:cover;">
-                        <span class="status-dot"></span>
-                    </div>
+                    <div class="tim-avatar"><img src="https://i.ibb.co.com/C5ZPZqJS/Whats-App-Image-2026-07-14-at-15-58-43.jpg" alt="Rayyan Maulana H." /><span class="status-dot"></span></div>
                     <h3>Rayyan Maulana H.</h3>
                     <span class="tim-divisi">Divisi Wawancara</span>
                     <div class="tim-status"><i class="fa-solid fa-circle"></i> Aktif</div>
                 </div>
-                
-                <!-- 8. Ilham -->
                 <div class="tim-card" data-aos="fade-up" data-aos-delay="450">
-                    <div class="tim-avatar">
-                        <img src="https://i.ibb.co.com/Qvk4HhQV/Whats-App-Image-2026-07-14-at-15-58-41.jpg" 
-                             alt="Ilham Syarif R." 
-                             style="width:100%; height:100%; border-radius:50%; object-fit:cover;">
-                        <span class="status-dot"></span>
-                    </div>
+                    <div class="tim-avatar"><img src="https://i.ibb.co.com/Qvk4HhQV/Whats-App-Image-2026-07-14-at-15-58-41.jpg" alt="Ilham Syarif R." /><span class="status-dot"></span></div>
                     <h3>Ilham Syarif R.</h3>
                     <span class="tim-divisi">Divisi Instrumen & Survei</span>
                     <div class="tim-status"><i class="fa-solid fa-circle"></i> Aktif</div>
                 </div>
-                
-                <!-- 9. Lukman -->
                 <div class="tim-card" data-aos="fade-up" data-aos-delay="500">
-                    <div class="tim-avatar">
-                        <img src="https://i.ibb.co.com/21mjQ0zf/Whats-App-Image-2026-07-14-at-15-58-42.jpg" 
-                             alt="Lukman Nurhakim A." 
-                             style="width:100%; height:100%; border-radius:50%; object-fit:cover;">
-                        <span class="status-dot"></span>
-                    </div>
+                    <div class="tim-avatar"><img src="https://i.ibb.co.com/21mjQ0zf/Whats-App-Image-2026-07-14-at-15-58-42.jpg" alt="Lukman Nurhakim A." /><span class="status-dot"></span></div>
                     <h3>Lukman Nurhakim A.</h3>
                     <span class="tim-divisi">Divisi Wawancara</span>
                     <div class="tim-status"><i class="fa-solid fa-circle"></i> Aktif</div>
@@ -967,14 +1944,50 @@
     <!-- ========== TIMELINE ========== -->
     <section class="timeline-section" id="timeline">
         <div class="container">
-            <div class="section-header" data-aos="fade-up"><span class="section-label">Perjalanan</span><h2 class="section-title">Timeline KPA 2026</h2><p class="section-subtitle">Dari persiapan hingga puncak program.</p></div>
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-label">Perjalanan</span>
+                <h2 class="section-title">Timeline KPA 2026</h2>
+                <p class="section-subtitle">Dari persiapan hingga puncak program.</p>
+            </div>
             <div class="timeline">
-                <div class="timeline-item" data-aos="fade-right"><div class="timeline-date">Maret – April 2026</div><h3>Persiapan Program</h3><p>Data tajnid, template proposal, penunjukan panitia.</p></div>
-                <div class="timeline-item highlight" data-aos="fade-right"><div class="timeline-date">2 Mei 2026</div><h3>KPA Bonding Day</h3><p>Pembukaan, pembentukan Hizeb. <strong>Hizeb Usman lolos seleksi presentasi!</strong></p></div>
-                <div class="timeline-item highlight" data-aos="fade-right"><div class="timeline-date">Mei – Juli 2026</div><h3>Pelaksanaan Project Hizeb</h3><p>Survei, wawancara, kunjungan lapangan.</p><div class="timeline-detail"><ul><li>Pertemuan informal Hizeb</li><li>Grup WhatsApp koordinasi</li><li>Observasi mentor</li><li>Survei 69 responden + 7 wawancara</li></ul></div></div>
-                <div class="timeline-item" data-aos="fade-right"><div class="timeline-date">25–28 Juni 2026</div><h3>KPA Experiment Week</h3><p>Eksperimen sains untuk jenjang SD, 39 titik se-Indonesia.</p></div>
-                <div class="timeline-item highlight" data-aos="fade-right"><div class="timeline-date">18 Juli 2026</div><h3>KPA Exhibition Day</h3><p>Pameran dan presentasi hasil project Hizeb.</p></div>
-                <div class="timeline-item" data-aos="fade-right"><div class="timeline-date">14–16 Agustus 2026</div><h3>KPA Youth Camp</h3><p>Berkemah 3 hari: kepemimpinan, karakter, kebersamaan.</p></div>
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-date">Maret – April 2026</div>
+                    <h3>Persiapan Program</h3>
+                    <p>Data tajnid, template proposal, penunjukan panitia.</p>
+                </div>
+                <div class="timeline-item highlight" data-aos="fade-right">
+                    <div class="timeline-date">2 Mei 2026</div>
+                    <h3>KPA Bonding Day</h3>
+                    <p>Pembukaan, pembentukan Hizeb. <strong>Hizeb Usman lolos seleksi presentasi!</strong></p>
+                </div>
+                <div class="timeline-item highlight" data-aos="fade-right">
+                    <div class="timeline-date">Mei – Juli 2026</div>
+                    <h3>Pelaksanaan Project Hizeb</h3>
+                    <p>Survei, wawancara, kunjungan lapangan.</p>
+                    <div class="timeline-detail">
+                        <ul>
+                            <li>Pertemuan informal Hizeb</li>
+                            <li>Grup WhatsApp koordinasi</li>
+                            <li>Observasi mentor</li>
+                            <li>Survei 69 responden + 7 wawancara</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-date">25–28 Juni 2026</div>
+                    <h3>KPA Experiment Week</h3>
+                    <p>Eksperimen sains untuk jenjang SD, 39 titik se-Indonesia.</p>
+                </div>
+                <div class="timeline-item highlight" data-aos="fade-right">
+                    <div class="timeline-date">18 Juli 2026</div>
+                    <h3>KPA Exhibition Day</h3>
+                    <p>Pameran dan presentasi hasil project Hizeb.</p>
+                </div>
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-date">14–16 Agustus 2026</div>
+                    <h3>KPA Youth Camp</h3>
+                    <p>Berkemah 3 hari: kepemimpinan, karakter, kebersamaan.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -982,16 +1995,35 @@
     <!-- ========== ANGGARAN ========== -->
     <section class="anggaran-section" id="anggaran">
         <div class="container">
-            <div class="section-header" data-aos="fade-up"><span class="section-label">Pendanaan</span><h2 class="section-title">Anggaran & Sumber Daya</h2></div>
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-label">Pendanaan</span>
+                <h2 class="section-title">Anggaran & Sumber Daya</h2>
+            </div>
             <div class="anggaran-grid">
-                <div class="anggaran-total" data-aos="fade-right"><div class="label">Total Biaya</div><div class="nominal">Rp500K–550K</div><div class="keterangan">Seluruh operasional riset</div></div>
+                <div class="anggaran-total" data-aos="fade-right">
+                    <div class="label">Total Biaya</div>
+                    <div class="nominal">Rp500K–550K</div>
+                    <div class="keterangan">Seluruh operasional riset</div>
+                </div>
                 <div class="anggaran-sumber" data-aos="fade-left">
                     <h3><i class="fa-solid fa-sack-dollar" style="color:#C9A84C;"></i> Sumber Pendanaan</h3>
                     <ul class="anggaran-list">
-                        <li><div class="sumber-icon komunitas"><i class="fa-solid fa-building-columns"></i></div><div class="sumber-info"><h4>Dana Komunitas</h4><p>Alokasi khusus KPA dari Jemaat.</p></div></li>
-                        <li><div class="sumber-icon reward"><i class="fa-solid fa-trophy"></i></div><div class="sumber-info"><h4>Reward Bonding Day</h4><p>Hadiah lolos seleksi presentasi.</p></div></li>
-                        <li><div class="sumber-icon swadaya"><i class="fa-solid fa-hand-holding-heart"></i></div><div class="sumber-info"><h4>Swadaya Anggota</h4><p>Iuran patungan sukarela.</p></div></li>
-                        <li><div class="sumber-icon natura"><i class="fa-solid fa-gift"></i></div><div class="sumber-info"><h4>Dukungan In-Kind</h4><p>Tempat & konsumsi dari narasumber.</p></div></li>
+                        <li>
+                            <div class="sumber-icon komunitas"><i class="fa-solid fa-building-columns"></i></div>
+                            <div class="sumber-info"><h4>Dana Komunitas</h4><p>Alokasi khusus KPA dari Jemaat.</p></div>
+                        </li>
+                        <li>
+                            <div class="sumber-icon reward"><i class="fa-solid fa-trophy"></i></div>
+                            <div class="sumber-info"><h4>Reward Bonding Day</h4><p>Hadiah lolos seleksi presentasi.</p></div>
+                        </li>
+                        <li>
+                            <div class="sumber-icon swadaya"><i class="fa-solid fa-hand-holding-heart"></i></div>
+                            <div class="sumber-info"><h4>Swadaya Anggota</h4><p>Iuran patungan sukarela.</p></div>
+                        </li>
+                        <li>
+                            <div class="sumber-icon natura"><i class="fa-solid fa-gift"></i></div>
+                            <div class="sumber-info"><h4>Dukungan In-Kind</h4><p>Tempat & konsumsi dari narasumber.</p></div>
+                        </li>
                     </ul>
                     <div class="anggaran-narasi">"Dengan dana terbatas, kami menyewa kendaraan dan berkeliling Bogor. Justru dalam kesederhanaan itulah, kebersamaan dan Ukhuwah semakin erat."</div>
                 </div>
@@ -1002,100 +2034,147 @@
     <!-- ========== REFLEKSI ========== -->
     <section class="refleksi-section" id="refleksi">
         <div class="container">
-            <div class="section-header" data-aos="fade-up"><span class="section-label">Refleksi</span><h2 class="section-title">Kendala, Solusi & Pembelajaran</h2></div>
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-label">Refleksi</span>
+                <h2 class="section-title">Kendala, Solusi & Pembelajaran</h2>
+            </div>
             <div class="refleksi-grid">
                 <div data-aos="fade-right">
                     <h3 style="margin-bottom:20px;"><i class="fa-solid fa-triangle-exclamation" style="color:#C9A84C;"></i> Kendala & Solusi</h3>
                     <div class="accordion-group">
-                        <div class="accordion-item"><div class="accordion-header"><span>1. Keterbatasan Anggaran</span><div class="accordion-icon"><i class="fa-solid fa-plus"></i></div></div><div class="accordion-body"><div class="accordion-body-inner"><span class="solusi-label">Multi-source Funding</span><p>Reward Bonding Day + iuran patungan + in-kind narasumber.</p></div></div></div>
-                        <div class="accordion-item"><div class="accordion-header"><span>2. Kesenjangan Kompetensi</span><div class="accordion-icon"><i class="fa-solid fa-plus"></i></div></div><div class="accordion-body"><div class="accordion-body-inner"><span class="solusi-label">Capacity-Based Task</span><p>Tugas teknis ke Ketua, anggota SMP sesuai kemampuan.</p></div></div></div>
-                        <div class="accordion-item"><div class="accordion-header"><span>3. Cakupan Wilayah Luas</span><div class="accordion-icon"><i class="fa-solid fa-plus"></i></div></div><div class="accordion-body"><div class="accordion-body-inner"><span class="solusi-label">Integrated Travel</span><p>Rute efisien, diskusi dan briefing di perjalanan.</p></div></div></div>
-                        <div class="accordion-item"><div class="accordion-header"><span>4. Koordinasi & Waktu</span><div class="accordion-icon"><i class="fa-solid fa-plus"></i></div></div><div class="accordion-body"><div class="accordion-body-inner"><span class="solusi-label">WhatsApp Command Center</span><p>Grup WA, reminder H-1/H+1, double-check jadwal H-2.</p></div></div></div>
+                        <div class="accordion-item">
+                            <div class="accordion-header"><span>1. Keterbatasan Anggaran</span><div class="accordion-icon"><i class="fa-solid fa-plus"></i></div></div>
+                            <div class="accordion-body">
+                                <div class="accordion-body-inner">
+                                    <span class="solusi-label">Multi-source Funding</span>
+                                    <p>Reward Bonding Day + iuran patungan + in-kind narasumber.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <div class="accordion-header"><span>2. Kesenjangan Kompetensi</span><div class="accordion-icon"><i class="fa-solid fa-plus"></i></div></div>
+                            <div class="accordion-body">
+                                <div class="accordion-body-inner">
+                                    <span class="solusi-label">Capacity-Based Task</span>
+                                    <p>Tugas teknis ke Ketua, anggota SMP sesuai kemampuan.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <div class="accordion-header"><span>3. Cakupan Wilayah Luas</span><div class="accordion-icon"><i class="fa-solid fa-plus"></i></div></div>
+                            <div class="accordion-body">
+                                <div class="accordion-body-inner">
+                                    <span class="solusi-label">Integrated Travel</span>
+                                    <p>Rute efisien, diskusi dan briefing di perjalanan.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <div class="accordion-header"><span>4. Koordinasi & Waktu</span><div class="accordion-icon"><i class="fa-solid fa-plus"></i></div></div>
+                            <div class="accordion-body">
+                                <div class="accordion-body-inner">
+                                    <span class="solusi-label">WhatsApp Command Center</span>
+                                    <p>Grup WA, reminder H-1/H+1, double-check jadwal H-2.</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div data-aos="fade-left">
                     <h3 style="margin-bottom:20px;"><i class="fa-solid fa-lightbulb" style="color:#C9A84C;"></i> Nilai yang Dipetik</h3>
                     <div class="pembelajaran-grid">
-                        <div class="pembelajaran-card"><div class="icon-box leadership"><i class="fa-solid fa-compass"></i></div><h4>Kepemimpinan Adaptif</h4><p>Membaca kapasitas anggota, mengangkat potensi mereka.</p></div>
-                        <div class="pembelajaran-card"><div class="icon-box collab"><i class="fa-solid fa-handshake"></i></div><h4>Kolaborasi & Ukhuwah</h4><p>Dari "kelompok tugas" menjadi keluarga yang solid.</p></div>
-                        <div class="pembelajaran-card"><div class="icon-box tolerance"><i class="fa-solid fa-earth-asia"></i></div><h4>Toleransi sebagai Pengalaman</h4><p>Perjumpaan langsung mengubah cara pandang.</p></div>
-                        <div class="pembelajaran-card"><div class="icon-box action"><i class="fa-solid fa-rocket"></i></div><h4>Gagasan Menjadi Aksi</h4><p>Penelitian sebagai dakwah dan amal shalih.</p></div>
+                        <div class="pembelajaran-card">
+                            <div class="icon-box leadership"><i class="fa-solid fa-compass"></i></div>
+                            <h4>Kepemimpinan Adaptif</h4>
+                            <p>Membaca kapasitas anggota, mengangkat potensi mereka.</p>
+                        </div>
+                        <div class="pembelajaran-card">
+                            <div class="icon-box collab"><i class="fa-solid fa-handshake"></i></div>
+                            <h4>Kolaborasi & Ukhuwah</h4>
+                            <p>Dari "kelompok tugas" menjadi keluarga yang solid.</p>
+                        </div>
+                        <div class="pembelajaran-card">
+                            <div class="icon-box tolerance"><i class="fa-solid fa-earth-asia"></i></div>
+                            <h4>Toleransi sebagai Pengalaman</h4>
+                            <p>Perjumpaan langsung mengubah cara pandang.</p>
+                        </div>
+                        <div class="pembelajaran-card">
+                            <div class="icon-box action"><i class="fa-solid fa-rocket"></i></div>
+                            <h4>Gagasan Menjadi Aksi</h4>
+                            <p>Penelitian sebagai dakwah dan amal shalih.</p>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="refleksi-quote" data-aos="fade-up"><p>"Keterbatasan — usia, anggaran, pengalaman — bukanlah halangan, melainkan medium untuk belajar dan berkembang bersama."</p><div class="quote-line"></div></div>
+            <div class="refleksi-quote" data-aos="fade-up">
+                <p>"Keterbatasan — usia, anggaran, pengalaman — bukanlah halangan, melainkan medium untuk belajar dan berkembang bersama."</p>
+                <div class="quote-line"></div>
+            </div>
         </div>
     </section>
 
     <!-- ========== DOKUMENTASI ========== -->
     <section class="dokumentasi-section" id="dokumentasi">
         <div class="container">
-            <div class="section-header" data-aos="fade-up"><span class="section-label">Galeri</span><h2 class="section-title">Dokumentasi Project</h2></div>
-           <div class="galeri-grid" id="galeriGrid">
-    <!-- 1. Pdt. Geget - GPIB -->
-    <div class="galeri-item" data-src="https://i.ibb.co.com/Z6JhtNgT/foto1-geget-jpg.jpg" data-caption="Pdt. Geget Elite Sucining Hyang (GPIB)">
-        <img src="https://i.ibb.co.com/Z6JhtNgT/foto1-geget-jpg.jpg" alt="Pdt. Geget" loading="lazy">
-        <div class="galeri-overlay"><span>Pdt. Geget Elite S.H. — Kristen Protestan (GPIB)</span></div>
-    </div>
-    <!-- 2. Agus Widodo - Hindu -->
-    <div class="galeri-item" data-src="https://i.ibb.co.com/Dgw8HhT1/foto2-agus-jpg.jpg" data-caption="Agus Widodo (Tokoh Hindu)">
-        <img src="https://i.ibb.co.com/Dgw8HhT1/foto2-agus-jpg.jpg" alt="Agus Widodo" loading="lazy">
-        <div class="galeri-overlay"><span>Agus Widodo — Hindu</span></div>
-    </div>
-    <!-- 3. Jemmy Mongan - OSZA -->
-    <div class="galeri-item" data-src="https://i.ibb.co.com/GvWfwnNT/foto3-jemmy-jpg.jpg" data-caption="Jemmy Mongan (OSZA)">
-        <img src="https://i.ibb.co.com/GvWfwnNT/foto3-jemmy-jpg.jpg" alt="Jemmy Mongan" loading="lazy">
-        <div class="galeri-overlay"><span>Jemmy Mongan — Kristen OSZA</span></div>
-    </div>
-    <!-- 4. Mln Syamsul Ulum - Islam/Ahmadiyah -->
-    <div class="galeri-item" data-src="https://i.ibb.co.com/21D2HYC8/foto4-ulum-jpg.jpg" data-caption="Mln. Syamsul Ulum (Jemaat Ahmadiyah)">
-        <img src="https://i.ibb.co.com/21D2HYC8/foto4-ulum-jpg.jpg" alt="Mln Syamsul Ulum" loading="lazy">
-        <div class="galeri-overlay"><span>Mln. Syamsul Ulum — Islam (Ahmadiyah)</span></div>
-    </div>
-    <!-- 5. Pdt. Dedanimrod - GKP -->
-    <div class="galeri-item" data-src="https://i.ibb.co.com/pj8zz7Wt/foto5-dedanimrod-jpg.jpg" data-caption="Pdt. Dedanimrod Simatupang (GKP)">
-        <img src="https://i.ibb.co.com/pj8zz7Wt/foto5-dedanimrod-jpg.jpg" alt="Pdt. Dedanimrod" loading="lazy">
-        <div class="galeri-overlay"><span>Pdt. Dedanimrod Simatupang — Kristen (GKP)</span></div>
-    </div>
-    <!-- 6. Bhante Subharo - Buddha -->
-    <div class="galeri-item" data-src="https://i.ibb.co.com/20zgcYh6/foto6-bhante-jpg.jpg" data-caption="Bhante Subharo (Tokoh Buddha)">
-        <img src="https://i.ibb.co.com/20zgcYh6/foto6-bhante-jpg.jpg" alt="Bhante Subharo" loading="lazy">
-        <div class="galeri-overlay"><span>Bhante Subharo — Buddha</span></div>
-    </div>
-    <!-- 7. Ws. Yudhi Yap Brata - Konghucu -->
-    <div class="galeri-item" data-src="https://i.ibb.co.com/sdqSX4t3/foto7-yudhi-jpg.jpg" data-caption="Ws. Yudhi Yap Brata (Tokoh Konghucu)">
-        <img src="https://i.ibb.co.com/sdqSX4t3/foto7-yudhi-jpg.jpg" alt="Ws. Yudhi" loading="lazy">
-        <div class="galeri-overlay"><span>Ws. Yudhi Yap Brata — Konghucu</span></div>
-    </div>
-    <!-- 8. Bimbingan Dr. Rakeeman -->
-    <div class="galeri-item" data-src="https://i.ibb.co.com/tMDXZ3PD/foto8-rakeeman-jpg.jpg" data-caption="Bimbingan Dr. Rakeeman R.A.M. Jumaan">
-        <img src="https://i.ibb.co.com/tMDXZ3PD/foto8-rakeeman-jpg.jpg" alt="Dr. Rakeeman" loading="lazy">
-        <div class="galeri-overlay"><span>Bimbingan Dr. Rakeeman R.A.M. Jumaan</span></div>
-    </div>
-    <!-- 9. Diskusi Hizeb -->
-    <div class="galeri-item" data-src="https://i.ibb.co.com/XZG7rP3t/foto9-diskusi-jpg.jpg" data-caption="Diskusi internal Hizeb Usman">
-        <img src="https://i.ibb.co.com/XZG7rP3t/foto9-diskusi-jpg.jpg" alt="Diskusi Hizeb" loading="lazy">
-        <div class="galeri-overlay"><span>Diskusi & Koordinasi Hizeb Usman</span></div>
-    </div>
-</div>
-</div>
-            <div class="btn-center" style="margin-top:40px;" data-aos="fade-up"><a href="https://drive.google.com/drive/folders/1Us5ExZl7vESXflbmOHHrUDja9SzmesaJ?usp=sharing" class="btn-drive" target="_blank"><i class="fa-brands fa-google-drive"></i> Dokumentasi Lengkap di Google Drive <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:0.7rem;"></i></a></div>
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-label">Galeri</span>
+                <h2 class="section-title">Dokumentasi Project</h2>
+            </div>
+            <div class="galeri-grid" id="galeriGrid">
+                <div class="galeri-item">
+                    <img src="https://i.ibb.co.com/Z6JhtNgT/foto1-geget-jpg.jpg" alt="Pdt. Geget" loading="lazy" />
+                    <div class="galeri-overlay"><span>Pdt. Geget Elite S.H. — Kristen Protestan (GPIB)</span></div>
+                </div>
+                <div class="galeri-item">
+                    <img src="https://i.ibb.co.com/Dgw8HhT1/foto2-agus-jpg.jpg" alt="Agus Widodo" loading="lazy" />
+                    <div class="galeri-overlay"><span>Agus Widodo — Hindu</span></div>
+                </div>
+                <div class="galeri-item">
+                    <img src="https://i.ibb.co.com/GvWfwnNT/foto3-jemmy-jpg.jpg" alt="Jemmy Mongan" loading="lazy" />
+                    <div class="galeri-overlay"><span>Jemmy Mongan — Kristen OSZA</span></div>
+                </div>
+                <div class="galeri-item">
+                    <img src="https://i.ibb.co.com/21D2HYC8/foto4-ulum-jpg.jpg" alt="Mln Syamsul Ulum" loading="lazy" />
+                    <div class="galeri-overlay"><span>Mln. Syamsul Ulum — Islam (Ahmadiyah)</span></div>
+                </div>
+                <div class="galeri-item">
+                    <img src="https://i.ibb.co.com/pj8zz7Wt/foto5-dedanimrod-jpg.jpg" alt="Pdt. Dedanimrod" loading="lazy" />
+                    <div class="galeri-overlay"><span>Pdt. Dedanimrod Simatupang — Kristen (GKP)</span></div>
+                </div>
+                <div class="galeri-item">
+                    <img src="https://i.ibb.co.com/20zgcYh6/foto6-bhante-jpg.jpg" alt="Bhante Subharo" loading="lazy" />
+                    <div class="galeri-overlay"><span>Bhante Subharo — Buddha</span></div>
+                </div>
+                <div class="galeri-item">
+                    <img src="https://i.ibb.co.com/sdqSX4t3/foto7-yudhi-jpg.jpg" alt="Ws. Yudhi" loading="lazy" />
+                    <div class="galeri-overlay"><span>Ws. Yudhi Yap Brata — Konghucu</span></div>
+                </div>
+                <div class="galeri-item">
+                    <img src="https://i.ibb.co.com/tMDXZ3PD/foto8-rakeeman-jpg.jpg" alt="Dr. Rakeeman" loading="lazy" />
+                    <div class="galeri-overlay"><span>Bimbingan Dr. Rakeeman R.A.M. Jumaan</span></div>
+                </div>
+                <div class="galeri-item">
+                    <img src="https://i.ibb.co.com/XZG7rP3t/foto9-diskusi-jpg.jpg" alt="Diskusi Hizeb" loading="lazy" />
+                    <div class="galeri-overlay"><span>Diskusi & Koordinasi Hizeb Usman</span></div>
+                </div>
+            </div>
+            <div class="btn-center" style="margin-top:40px;" data-aos="fade-up">
+                <a href="https://drive.google.com/drive/folders/1Us5ExZl7vESXflbmOHHrUDja9SzmesaJ?usp=sharing" class="btn-drive" target="_blank">
+                    <i class="fa-brands fa-google-drive"></i> Dokumentasi Lengkap di Google Drive <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:0.7rem;"></i>
+                </a>
+            </div>
         </div>
     </section>
-
-    <!-- ========== LIGHTBOX ========== -->
-    <div class="lightbox" id="lightbox">
-        <div class="lightbox-close" id="lightboxClose">&times;</div>
-        <button class="lightbox-nav lightbox-prev" id="lightboxPrev"><i class="fa-solid fa-chevron-left"></i></button>
-        <button class="lightbox-nav lightbox-next" id="lightboxNext"><i class="fa-solid fa-chevron-right"></i></button>
-        <img src="" alt="" id="lightboxImg">
-        <p class="lightbox-caption" id="lightboxCaption"></p>
-    </div>
 
     <!-- ========== FOOTER ========== -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-trisula"><svg viewBox="0 0 200 240" width="50"><rect x="90" y="140" width="20" height="80" rx="4" fill="rgba(201,168,76,0.4)"/><path d="M60 20 L100 140 L140 20" stroke="rgba(201,168,76,0.4)" stroke-width="8" fill="none"/></svg></div>
+            <div class="footer-trisula">
+                <svg viewBox="0 0 200 240" width="50">
+                    <rect x="90" y="140" width="20" height="80" rx="4" fill="rgba(201,168,76,0.4)" />
+                    <path d="M60 20 L100 140 L140 20" stroke="rgba(201,168,76,0.4)" stroke-width="8" fill="none" />
+                </svg>
+            </div>
             <p><strong>Hizeb Usman — KPA Kemang Markaz 2026</strong><br>Dibangun dengan semangat Trisula: <strong>Iman, Ilmu, Amal</strong>.</p>
             <div class="footer-social">
                 <a href="#"><i class="fa-brands fa-instagram"></i></a>
@@ -1108,11 +2187,13 @@
         </div>
     </footer>
 
+    <!-- ========== BACK TO TOP ========== -->
     <button class="back-to-top" id="backToTop"><i class="fa-solid fa-arrow-up"></i></button>
 
     <!-- ========== SCRIPTS ========== -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js">
+    </script>
     <script>
         AOS.init({ duration: 800, once: true, offset: 80 });
 
@@ -1124,7 +2205,8 @@
         const hamburger = document.getElementById('hamburger');
         const navMenu = document.getElementById('navMenu');
         hamburger.addEventListener('click', () => navMenu.classList.toggle('active'));
-        document.querySelectorAll('.nav-menu a').forEach(link => link.addEventListener('click', () => navMenu.classList.remove('active')));
+        document.querySelectorAll('.nav-menu a').forEach(link => link.addEventListener('click', () => navMenu.classList.remove(
+        'active')));
 
         // Scroll spy
         const sections = document.querySelectorAll('section[id]');
@@ -1132,10 +2214,11 @@
         window.addEventListener('scroll', () => {
             let current = '';
             sections.forEach(s => { if (window.scrollY >= s.offsetTop - 100) current = s.getAttribute('id'); });
-            navLinks.forEach(l => { l.classList.remove('active'); if (l.getAttribute('href') === '#' + current) l.classList.add('active'); });
+            navLinks.forEach(l => { l.classList.remove('active'); if (l.getAttribute('href') === '#' + current) l.classList.add(
+                    'active'); });
         });
 
-                // Chart.js — Grafik 4 Dimensi + Total
+        // Chart.js — Grafik 4 Dimensi + Total
         const ctx = document.getElementById('chartToleransi');
         if (ctx) {
             new Chart(ctx, {
@@ -1181,13 +2264,13 @@
                             max: 90,
                             ticks: {
                                 callback: v => v + '%',
-                                font: { family: "'Inter', sans-serif", size: 11 }
+                                font: { family: "'Inter'", size: 11 }
                             },
                             grid: { color: 'rgba(0,0,0,0.05)' }
                         },
                         x: {
                             ticks: {
-                                font: { family: "'Inter', sans-serif", size: 10, weight: '600' },
+                                font: { family: "'Inter'", size: 10, weight: '600' },
                                 maxRotation: 25
                             },
                             grid: { display: false }
@@ -1201,33 +2284,13 @@
             });
         }
 
-        
         // Accordion
         document.querySelectorAll('.accordion-header').forEach(h => h.addEventListener('click', function() {
             const item = this.parentElement;
-            item.parentElement.querySelectorAll('.accordion-item').forEach(i => { if (i !== item) i.classList.remove('active'); });
+            item.parentElement.querySelectorAll('.accordion-item').forEach(i => { if (i !== item) i.classList.remove(
+                    'active'); });
             item.classList.toggle('active');
         }));
-
-        // Lightbox
-        const lightbox = document.getElementById('lightbox'), lightboxImg = document.getElementById('lightboxImg'), lightboxCaption = document.getElementById('lightboxCaption');
-        const galeriItems = document.querySelectorAll('.galeri-item');
-        let currentImg = 0;
-        const images = [];
-        galeriItems.forEach((item, i) => {
-            const img = item.querySelector('img');
-            if (img) { images.push({ src: img.src, caption: item.dataset.caption }); }
-            item.addEventListener('click', () => {
-                if (img) { currentImg = images.findIndex(x => x.src === img.src); openLightbox(currentImg); }
-            });
-        });
-        function openLightbox(i) { if (!images.length) return; currentImg = i; lightboxImg.src = images[i].src; lightboxCaption.textContent = images[i].caption; lightbox.classList.add('active'); document.body.style.overflow = 'hidden'; }
-        function closeLightbox() { lightbox.classList.remove('active'); document.body.style.overflow = ''; }
-        document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
-        document.getElementById('lightboxPrev').addEventListener('click', () => { if (images.length) { currentImg = (currentImg - 1 + images.length) % images.length; lightboxImg.src = images[currentImg].src; lightboxCaption.textContent = images[currentImg].caption; } });
-        document.getElementById('lightboxNext').addEventListener('click', () => { if (images.length) { currentImg = (currentImg + 1) % images.length; lightboxImg.src = images[currentImg].src; lightboxCaption.textContent = images[currentImg].caption; } });
-        lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
-        document.addEventListener('keydown', e => { if (!lightbox.classList.contains('active')) return; if (e.key === 'Escape') closeLightbox(); if (e.key === 'ArrowLeft') document.getElementById('lightboxPrev').click(); if (e.key === 'ArrowRight') document.getElementById('lightboxNext').click(); });
 
         // Back to Top
         const backToTop = document.getElementById('backToTop');
