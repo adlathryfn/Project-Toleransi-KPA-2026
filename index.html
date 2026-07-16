@@ -400,6 +400,240 @@
             .tim-grid, .galeri-grid { grid-template-columns: 1fr; }
             .capaian-grid { grid-template-columns: 1fr; }
         }
+        /* ==================== FIX OVERFLOW & CELAH KOSONG ==================== */
+* {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+html, body {
+    overflow-x: hidden !important;
+    width: 100%;
+}
+
+img, svg, canvas, table, iframe, video {
+    max-width: 100% !important;
+    height: auto !important;
+}
+
+/* Perbaiki tabel di mobile */
+@media (max-width: 768px) {
+    .hasil-card table,
+    .hasil-card table tbody,
+    .hasil-card table tr,
+    .hasil-card table td,
+    .hasil-card table th {
+        display: block;
+        width: 100% !important;
+        box-sizing: border-box;
+    }
+    
+    .hasil-card table tr {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+        padding: 6px 0;
+    }
+    
+    .hasil-card table td,
+    .hasil-card table th {
+        display: inline-block;
+        width: auto !important;
+        padding: 4px 6px !important;
+        text-align: left !important;
+        font-size: 0.75rem !important;
+        flex: 1;
+        min-width: 60px;
+    }
+    
+    .hasil-card table td:first-child,
+    .hasil-card table th:first-child {
+        flex: 2;
+        font-weight: 600;
+    }
+    
+    /* Perbaiki tabel ringkasan di hasil card */
+    .hasil-card table thead {
+        display: none;
+    }
+    
+    .hasil-card table tr {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 8px 0;
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+    
+    .hasil-card table td {
+        display: flex;
+        flex: 1 1 45%;
+        padding: 4px 6px !important;
+        font-size: 0.75rem !important;
+        justify-content: space-between;
+    }
+    
+    .hasil-card table td::before {
+        content: attr(data-label);
+        font-weight: 600;
+        color: var(--hijau-tua);
+    }
+    
+    /* Perbaiki chart container */
+    .chart-container {
+        height: 220px !important;
+        max-width: 100% !important;
+    }
+    
+    .chart-container canvas {
+        width: 100% !important;
+        height: 100% !important;
+    }
+    
+    /* Perbaiki detail responden */
+    .hasil-card > div:first-of-type {
+        flex-direction: column !important;
+        gap: 4px !important;
+    }
+    
+    /* Perbaiki container */
+    .container {
+        padding: 0 16px !important;
+    }
+    
+    /* Perbaiki hero */
+    .hero h1 {
+        font-size: 1.8rem !important;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem !important;
+    }
+    
+    /* Perbaiki badge reward */
+    .badge-reward {
+        font-size: 0.75rem !important;
+        padding: 8px 14px !important;
+        flex-wrap: wrap;
+    }
+    
+    /* Perbaiki pilar grid */
+    .pilar-grid {
+        gap: 16px !important;
+    }
+    
+    .pilar-card {
+        padding: 24px 18px !important;
+    }
+    
+    /* Perbaiki proyek grid */
+    .proyek-grid {
+        gap: 30px !important;
+    }
+    
+    .proyek-image img {
+        border-radius: 14px !important;
+        max-height: 240px;
+        object-fit: cover;
+    }
+    
+    /* Perbaiki hasil grid */
+    .hasil-grid {
+        gap: 24px !important;
+    }
+    
+    .hasil-card {
+        padding: 20px 16px !important;
+    }
+    
+    /* Perbaiki galeri grid di 480px sudah ok, tapi tambahkan */
+    .galeri-grid {
+        gap: 12px !important;
+    }
+    
+    .galeri-item {
+        aspect-ratio: 1/1 !important;
+    }
+    
+    /* Perbaiki refleksi quote */
+    .refleksi-quote {
+        padding: 24px 16px !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+    
+    .refleksi-quote p {
+        font-size: 1rem !important;
+    }
+    
+    /* Perbaiki accordion */
+    .accordion-header {
+        font-size: 0.85rem !important;
+        padding: 14px 16px !important;
+    }
+    
+    .accordion-body-inner {
+        padding: 0 16px 14px !important;
+    }
+    
+    /* Perbaiki pembelajaran grid */
+    .pembelajaran-grid {
+        gap: 12px !important;
+    }
+    
+    .pembelajaran-card {
+        padding: 16px !important;
+    }
+    
+    /* Perbaiki anggaran */
+    .anggaran-total .nominal {
+        font-size: 2rem !important;
+    }
+    
+    .anggaran-sumber {
+        padding: 24px 18px !important;
+    }
+    
+    .anggaran-list li {
+        padding: 12px !important;
+        flex-wrap: wrap;
+    }
+    
+    /* Perbaiki timeline */
+    .timeline {
+        padding-left: 24px !important;
+    }
+    
+    .timeline-item {
+        padding-left: 16px !important;
+    }
+    
+    .timeline-item::before {
+        left: -18px !important;
+        width: 10px !important;
+        height: 10px !important;
+    }
+    
+    /* Perbaiki mentor badge */
+    .mentor-badge {
+        gap: 30px !important;
+    }
+    
+    .mentor-badge > div img {
+        width: 70px !important;
+        height: 70px !important;
+    }
+    
+    /* Perbaiki tombol */
+    .btn-primary,
+    .btn-outline,
+    .btn-drive {
+        font-size: 0.85rem !important;
+        padding: 12px 20px !important;
+        text-align: center;
+        justify-content: center;
+    }
+}
     </style>
 </head>
 <body>
